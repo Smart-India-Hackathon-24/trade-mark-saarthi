@@ -53,11 +53,15 @@ Requirements:
     
         a. Provide clear feedback to the user if their submitted title is too similar to an existing title, contains disallowed prefixes/suffixes, violates guidelines, or is created by combining existing titles. 
         
-        b. Display the verification probability to the user. c. Allow the user to modify their title and resubmit it for verification. 
+        b. Display the verification probability to the user. 
+        
+        c. Allow the user to modify their title and resubmit it for verification. 
         
     7. Scalability: 
     
-        a. Design the system to handle an increasing number of titles and user submissions. b. Ensure that the system remains performant as the database grows. 
+        a. Design the system to handle an increasing number of titles and user submissions. 
+        
+        b. Ensure that the system remains performant as the database grows. 
         
 
 Expected Solution: 
