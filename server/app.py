@@ -9,6 +9,9 @@ import random
 import json
 from typing import List
 from pydantic import BaseModel
+from sentence_transformers import SentenceTransformer
+from scipy.spatial.distance import cosine
+from metaphone import doublemetaphone
 
 
 load_dotenv()
@@ -74,7 +77,7 @@ fields = [
 
 collection_schema = CollectionSchema(fields, description="Title Registration Data")
 
-collection_name = "TradeMark_Data"
+collection_name = "Phonetic_Data"
 collection=''
 try:
     collection = Collection(name=collection_name)  
@@ -128,12 +131,51 @@ def extract_data():
 async def get_all_data():
     try:
         # output_fields = [field.name for field in collection.schema.fields if field.name!='vector']
-        output_fields = [field.name for field in collection.schema.fields if field.name != 'vector']
-        data = collection.query(expr="", output_fields=output_fields,limit=10)
+        # output_fields = [field.name for field in collection.schema.fields if field.name != 'vector']
+        data = collection.query(expr="")
         return {"message": "data received successfully", "data": data}
     except Exception as e:
         return {"error": str(e)}, 500  # Return error message
 
+
+def calculate_similarity(query_vector, stored_vector):
+    return 1 - cosine(query_vector, stored_vector)
+
+def get_metaphone(name):
+    return doublemetaphone(name)[0]
+
+@app.get("/trademark/querydata")
+async def get_query_data():
+    try:
+        model = SentenceTransformer('all-MiniLM-L6-v2')
+        query_vector = model.encode("JAN JAGRAN TIMES").tolist()
+        query_metaphone = get_metaphone("JAN JAGRAN TIMES")
+        vector_results = []
+        output_fields = [field.name for field in collection.schema.fields]
+        data = collection.query(expr="",output_fields=output_fields,limit=5)
+        # print(data)
+        for row in data:
+            print("roowwwwwwws",row)
+            print(row['vector'])
+            similarity = calculate_similarity(query_vector, row['vector'])
+            vector_results.append((row, similarity))
+
+        # Sort the vector results by similarity score
+        vector_results.sort(key=lambda x: x[1], reverse=True)
+        result=[row for row, _ in vector_results[:5]]
+        return {"message": "data received successfully", "data": result}
+    except Exception as e:
+        return {"error": str(e)}, 500  # Return error message
+
+@app.get("/trademark/deleteAllData")
+def delete_all_data():
+    try:
+        global collection
+        collection.drop()
+        
+    except Exception as e:
+        return {"error": str(e)}, 500 
+        
 
 @app.post("/trademark/add")
 async def insert_data(data:List[TrademarkData]):
