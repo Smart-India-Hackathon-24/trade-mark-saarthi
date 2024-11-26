@@ -29,10 +29,17 @@ connections.connect(
 origins = [
     "http://localhost:3000",    # React default port
     "http://localhost:8080",    # Common frontend port
-    # Add other allowed origins as needed
+    "https://trademark-sarthi.vercel.app",  # Vercel deployment
+    "*"  # Allow all origins in development
 ]
 
-app = FastAPI()
+app = FastAPI(
+    title="Trademark Sarthi API",
+    description="API for trademark search and management",
+    version="1.0.0",
+    docs_url="/docs",
+    redoc_url="/redoc"
+)
 
 # Configure CORS with specific origins
 app.add_middleware(
@@ -56,6 +63,21 @@ class TrademarkData(BaseModel):
     publication_city_district: str
     periodity: str
     # vector: List[float] 
+
+    class Config:
+        schema_extra = {
+            "example": {
+                "title_code": "ABC123",
+                "title_name": "Sample Trademark",
+                "hindi_title": "नमूना ट्रेडमार्क",
+                "register_serial_no": "REG123",
+                "regn_no": "456",
+                "owner_name": "John Doe",
+                "state": "Maharashtra",
+                "publication_city_district": "Mumbai",
+                "periodity": "Monthly"
+            }
+        }
 
 
 
@@ -106,7 +128,11 @@ else:
 
 
 
-@app.get('/extract-data')
+@app.get('/extract-data', 
+    summary="Extract data from HTML file",
+    description="Extracts trademark data from an HTML file and returns it as JSON",
+    response_description="List of extracted trademark data"
+)
 def extract_data():
     with open('../dataset/final.html', 'r') as file:
         soup = BeautifulSoup(file, 'html.parser')
@@ -138,7 +164,11 @@ def extract_data():
     return {"message":"data extracted successfully","data":data}
 
 
-@app.get("/trademark/alldata")
+@app.get("/trademark/alldata",
+    summary="Get all trademark data",
+    description="Retrieves all trademark records from the database",
+    response_description="List of all trademark records"
+)
 async def get_all_data():
     try:
         # output_fields = [field.name for field in collection.schema.fields if field.name!='vector']
@@ -156,7 +186,11 @@ def get_metaphone(name):
     return doublemetaphone(name)[0]
 
 
-@app.get("/trademark/querydata")
+@app.get("/trademark/querydata",
+    summary="Query trademark data",
+    description="Search for trademarks using vector similarity",
+    response_description="List of similar trademarks"
+)
 async def get_query_data():
     try:
         query_metaphone = get_metaphone("SAMPURNA JAGRAN")
@@ -214,7 +248,11 @@ async def get_query_data():
     except Exception as e:
         return {"error": str(e)}, 500  # Return error message
 
-@app.get("/trademark/getdataontitle")
+@app.get("/trademark/getdataontitle",
+    summary="Get trademark data by title",
+    description="Search for trademarks by title name and return results as CSV",
+    response_description="CSV file containing search results"
+)
 async def get_data_title(name: str = Query(..., description="The name to search for")):
     try:
         model = SentenceTransformer('all-MiniLM-L6-v2')
@@ -267,7 +305,11 @@ async def get_data_title(name: str = Query(..., description="The name to search 
 
 
 
-@app.get("/trademark/deleteAllData")
+@app.get("/trademark/deleteAllData",
+    summary="Delete all trademark data",
+    description="Removes all records from the trademark database",
+    response_description="Deletion confirmation"
+)
 def delete_all_data():
     try:
         global collection
@@ -277,7 +319,12 @@ def delete_all_data():
         return {"error": str(e)}, 500 
         
 
-@app.post("/trademark/add")
+@app.post("/trademark/add",
+    summary="Add new trademark data",
+    description="Insert new trademark records into the database",
+    response_description="Insertion confirmation",
+    response_model=dict
+)
 async def insert_data(data:List[TrademarkData]):
     try:
         print(data)
@@ -298,13 +345,18 @@ async def insert_data(data:List[TrademarkData]):
         print("ERROR",e)
         return {"error": str(e)}, 500 
 
-@app.get("/")
+@app.get("/",
+    summary="Root endpoint",
+    description="Basic health check endpoint",
+    response_description="Welcome message"
+)
 async def getApi():
     return "Hello"
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
     # Run server using: python app.py
     # Or using uvicorn directly: uvicorn app:app --host 0.0.0.0 --port 8000 --reload
 

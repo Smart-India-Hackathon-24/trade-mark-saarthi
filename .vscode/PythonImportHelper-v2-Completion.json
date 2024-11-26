@@ -194,7 +194,7 @@
         "kind": 2,
         "importPath": "server.app",
         "description": "server.app",
-        "peekOfCode": "def calculate_similarity(query_vector, stored_vector):\n    return 1 - cosine(query_vector, stored_vector)\ndef get_metaphone(name):\n    return doublemetaphone(name)[0]\n@app.get(\"/trademark/querydata\")\nasync def get_query_data():\n    try:\n        query_metaphone = get_metaphone(\"SAMPURNA JAGRAN\")\n        query_vector = model.encode(query_metaphone).tolist()\n        # vector_results = []",
+        "peekOfCode": "def calculate_similarity(query_vector, stored_vector):\n    return 1 - cosine(query_vector, stored_vector)\ndef get_metaphone(name):\n    return doublemetaphone(name)[0]\n@app.get(\"/trademark/querydata\",\n    summary=\"Query trademark data\",\n    description=\"Search for trademarks using vector similarity\",\n    response_description=\"List of similar trademarks\"\n)\nasync def get_query_data():",
         "detail": "server.app",
         "documentation": {}
     },
@@ -203,7 +203,7 @@
         "kind": 2,
         "importPath": "server.app",
         "description": "server.app",
-        "peekOfCode": "def get_metaphone(name):\n    return doublemetaphone(name)[0]\n@app.get(\"/trademark/querydata\")\nasync def get_query_data():\n    try:\n        query_metaphone = get_metaphone(\"SAMPURNA JAGRAN\")\n        query_vector = model.encode(query_metaphone).tolist()\n        # vector_results = []\n        # output_fields = [field.name for field in collection.schema.fields]\n        # data = collection.query(expr=\"\",output_fields=output_fields,limit=5)",
+        "peekOfCode": "def get_metaphone(name):\n    return doublemetaphone(name)[0]\n@app.get(\"/trademark/querydata\",\n    summary=\"Query trademark data\",\n    description=\"Search for trademarks using vector similarity\",\n    response_description=\"List of similar trademarks\"\n)\nasync def get_query_data():\n    try:\n        query_metaphone = get_metaphone(\"SAMPURNA JAGRAN\")",
         "detail": "server.app",
         "documentation": {}
     },
@@ -212,7 +212,7 @@
         "kind": 2,
         "importPath": "server.app",
         "description": "server.app",
-        "peekOfCode": "def delete_all_data():\n    try:\n        global collection\n        collection.delete(expr=\"Auto_id >= 0\")\n    except Exception as e:\n        return {\"error\": str(e)}, 500 \n@app.post(\"/trademark/add\")\nasync def insert_data(data:List[TrademarkData]):\n    try:\n        print(data)",
+        "peekOfCode": "def delete_all_data():\n    try:\n        global collection\n        collection.delete(expr=\"Auto_id >= 0\")\n    except Exception as e:\n        return {\"error\": str(e)}, 500 \n@app.post(\"/trademark/add\",\n    summary=\"Add new trademark data\",\n    description=\"Insert new trademark records into the database\",\n    response_description=\"Insertion confirmation\",",
         "detail": "server.app",
         "documentation": {}
     },
@@ -221,7 +221,7 @@
         "kind": 5,
         "importPath": "server.app",
         "description": "server.app",
-        "peekOfCode": "origins = [\n    \"http://localhost:3000\",    # React default port\n    \"http://localhost:8080\",    # Common frontend port\n    # Add other allowed origins as needed\n]\napp = FastAPI()\n# Configure CORS with specific origins\napp.add_middleware(\n    CORSMiddleware,\n    allow_origins=origins,",
+        "peekOfCode": "origins = [\n    \"http://localhost:3000\",    # React default port\n    \"http://localhost:8080\",    # Common frontend port\n    \"https://trademark-sarthi.vercel.app\",  # Vercel deployment\n    \"*\"  # Allow all origins in development\n]\napp = FastAPI(\n    title=\"Trademark Sarthi API\",\n    description=\"API for trademark search and management\",\n    version=\"1.0.0\",",
         "detail": "server.app",
         "documentation": {}
     },
@@ -230,7 +230,7 @@
         "kind": 5,
         "importPath": "server.app",
         "description": "server.app",
-        "peekOfCode": "app = FastAPI()\n# Configure CORS with specific origins\napp.add_middleware(\n    CORSMiddleware,\n    allow_origins=origins,\n    allow_credentials=True,\n    allow_methods=[\"GET\", \"POST\", \"PUT\", \"DELETE\"],\n    allow_headers=[\"*\"],\n)\n# Define a Pydantic model for the data structure",
+        "peekOfCode": "app = FastAPI(\n    title=\"Trademark Sarthi API\",\n    description=\"API for trademark search and management\",\n    version=\"1.0.0\",\n    docs_url=\"/docs\",\n    redoc_url=\"/redoc\"\n)\n# Configure CORS with specific origins\napp.add_middleware(\n    CORSMiddleware,",
         "detail": "server.app",
         "documentation": {}
     },
