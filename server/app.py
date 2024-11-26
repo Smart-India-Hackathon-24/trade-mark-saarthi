@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI,Query
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from pymilvus import Collection, connections, FieldSchema, CollectionSchema, DataType
@@ -7,12 +7,14 @@ import os
 from bs4 import BeautifulSoup
 import random
 import json
-from typing import List
+from typing import List,Dict,Any
 from pydantic import BaseModel
 from sentence_transformers import SentenceTransformer
 from scipy.spatial.distance import cosine
 from metaphone import doublemetaphone
-
+import pandas as pd
+from fastapi.responses import FileResponse
+import ast
 
 load_dotenv()
 
@@ -60,31 +62,40 @@ class TrademarkData(BaseModel):
 
 # collection_name = "TradeMark_Sarthi"
 # collection = Collection(name=collection_name)
+auto_id_field = FieldSchema(name="Auto_id", dtype=DataType.INT64, is_primary=True, auto_id=True)
+vector_field = FieldSchema(name="vector", dtype=DataType.FLOAT_VECTOR, dim=384)
+title_code_field = FieldSchema(name="Title_Code", dtype=DataType.VARCHAR, max_length=200)
+title_name_field = FieldSchema(name="Title_Name", dtype=DataType.VARCHAR, max_length=200)
+soundex_name_field = FieldSchema(name="Soundex_Name", dtype=DataType.VARCHAR, max_length=200)
+metaphone_name_field = FieldSchema(name="Metaphone_Name", dtype=DataType.VARCHAR, max_length=200)
+double_metaphone_primary_field = FieldSchema(name="Double_Metaphone_Primary", dtype=DataType.VARCHAR, max_length=200)
+double_metaphone_secondary_field = FieldSchema(name="Double_Metaphone_Secondary", dtype=DataType.VARCHAR, max_length=200)
+nysiis_name_field = FieldSchema(name="NYSIIS_Name", dtype=DataType.VARCHAR, max_length=200)
 
 
-fields = [
-    FieldSchema(name="title_code", dtype=DataType.VARCHAR, max_length=50, is_primary=True),
-    FieldSchema(name="title_name", dtype=DataType.VARCHAR, max_length=255),
-    FieldSchema(name="hindi_title", dtype=DataType.VARCHAR, max_length=255),
-    FieldSchema(name="register_serial_no", dtype=DataType.VARCHAR, max_length=50),
-    FieldSchema(name="regn_no", dtype=DataType.VARCHAR, max_length=50),
-    FieldSchema(name="owner_name", dtype=DataType.VARCHAR, max_length=255),
-    FieldSchema(name="state", dtype=DataType.VARCHAR, max_length=100),
-    FieldSchema(name="publication_city_district", dtype=DataType.VARCHAR, max_length=255),
-    FieldSchema(name="periodity", dtype=DataType.VARCHAR, max_length=100),
-    FieldSchema(name="vector", dtype=DataType.FLOAT_VECTOR, dim=128),  # Vector field with dimension 128
-]
+schema = CollectionSchema(
+    fields=[
+        auto_id_field,
+        vector_field,
+        title_code_field,
+        title_name_field,
+        soundex_name_field,
+        metaphone_name_field,
+        double_metaphone_primary_field,
+        double_metaphone_secondary_field,
+        nysiis_name_field
+    ],
+    description="Collection for title information with vector embeddings and phonetic codes."
+)
 
-collection_schema = CollectionSchema(fields, description="Title Registration Data")
-
-collection_name = "Phonetic_Data"
+collection_name = "Simple_Embeddings"
 collection=''
 try:
     collection = Collection(name=collection_name)  
     collection.load()
     print("Collection exists.")
 except Exception as e:
-    collection = Collection(name=collection_name, schema=collection_schema) 
+    collection = Collection(name=collection_name, schema=schema) 
     print("Collection created.")
 
 
@@ -123,7 +134,7 @@ def extract_data():
     # if data:
     #     collection.insert(data)
     #     dummy_vectors = [[random.random() for _ in range(128)] for _ in range(len(data))]
-
+    
     return {"message":"data extracted successfully","data":data}
 
 
@@ -144,34 +155,198 @@ def calculate_similarity(query_vector, stored_vector):
 def get_metaphone(name):
     return doublemetaphone(name)[0]
 
+def parsed_result(raw_data):
+    print("I Came Here")
+    parsed_results = []
+    for item in raw_data:
+        print(item)
+        # with open("viren.txt","w",encoding="utf-8") as f:
+        #     f.write(item)
+        # Convert the string into a dictionary
+        parsed_item = {}
+        for field in item.split(", "):
+            key, value = field.split(": ", 1)
+            key = key.strip()
+            value = value.strip()
+            # Handle nested entity
+            if key == "entity":
+                parsed_item[key] = ast.literal_eval(value)
+            elif key == "distance":
+                parsed_item[key] = float(value)
+            elif key == "id":
+                parsed_item[key] = int(value)
+            else:
+                parsed_item[key] = value
+        parsed_results.append(parsed_item)
+        print("Now I am going")
+    return parsed_results
+# Define Pydantic response model
+# Define Pydantic response model
+class SearchResult(BaseModel):
+    id: str
+    distance: float
+    entity: Dict[str, Any]
+
+
+@app.get("/trademark/queryvector")
+async def get_query_vector_data():
+    try:
+        model = SentenceTransformer('all-MiniLM-L6-v2')
+        query_metaphone = get_metaphone("SAMPURNA JAGRAN")
+        query_vector = model.encode(query_metaphone).tolist()
+        results=collection.search(
+            data=[query_vector],
+            anns_field="vector",
+            param={"metric_type": "COSINE", "params": {"nprobe": 384}},
+            limit=200,
+            # expr=f"Metaphone_Name=='{query_metaphone}'",
+            output_fields=["Metaphone_Name","Title_Code","Title_Name"]
+        )
+
+        print(results)
+        print(type(results))
+
+        processed_results = []
+        for result in results[0]:  # raw_results[0] contains the first search result batch
+        # # Extract fields from the result object
+            print(result)
+            processed_results.append({
+                "id": result.id,
+                "distance": result.distance,
+                "entity": {
+                       "Metaphone_Name": result.entity.get("Metaphone_Name"),
+                    "Title_Code": result.entity.get("Title_Code"),
+                    "Title_Name": result.entity.get("Title_Name"),
+                    # "Metaphone_Name": result.entity.get("Metaphone_Name", ""),
+                    # "Title_Code": result.entity.get("Title_Code", ""),
+                    # "Title_Name": result.entity.get("Title_Name", ""),
+                }
+            })
+
+
+        return {"message": "data received successfully","data": processed_results},200
+        # return {"message": "data received successfully","data":str(results)},200
+
+    except Exception as e:
+        print(e)
+        return {"error": str(e)}, 500  # Return error message
+
 @app.get("/trademark/querydata")
 async def get_query_data():
     try:
-        model = SentenceTransformer('all-MiniLM-L6-v2')
-        query_vector = model.encode("JAN JAGRAN TIMES").tolist()
-        query_metaphone = get_metaphone("JAN JAGRAN TIMES")
-        vector_results = []
-        output_fields = [field.name for field in collection.schema.fields]
-        data = collection.query(expr="",output_fields=output_fields,limit=5)
-        # print(data)
-        for row in data:
-            print("roowwwwwwws",row)
-            print(row['vector'])
-            similarity = calculate_similarity(query_vector, row['vector'])
-            vector_results.append((row, similarity))
+        query_metaphone = get_metaphone("SAMPURNA JAGRAN")
+        query_vector = model.encode(query_metaphone).tolist()
+        # vector_results = []
+        # output_fields = [field.name for field in collection.schema.fields]
+        # data = collection.query(expr="",output_fields=output_fields,limit=5)
+        # # print(data)
+        # for row in data:
+        #     print("roowwwwwwws",row)
+        #     print(row['vector'])
+        #     similarity = calculate_similarity(query_vector, row['vector'])
+        #     vector_results.append((row, similarity))
 
-        # Sort the vector results by similarity score
-        vector_results.sort(key=lambda x: x[1], reverse=True)
-        result=[row for row, _ in vector_results[:5]]
-        return {"message": "data received successfully", "data": result}
+        # # Sort the vector results by similarity score
+        # vector_results.sort(key=lambda x: x[1], reverse=True)
+        # result=[row for row, _ in vector_results[:5]]
+        search_params = {
+            "metric_type": "COSINE",
+            "params": {"nprobe": 10}
+        }
+        # results = collection.query(
+        #     # data=[query_vector],
+        #     # anns_field="vector",
+        #     # param=search_params,
+        #     limit=5,
+        #     expr=f"Metaphone_Name=='{query_metaphone}'",
+        #     output_fields=["Metaphone_Name","Title_Code","Title_Name"]
+        # )
+        results=collection.search(
+            data=[query_vector],
+            anns_field="vector",
+            param={"metric_type": "COSINE", "params": {"nprobe": 384}},
+            limit=200,
+            # expr=f"Metaphone_Name=='{query_metaphone}'",
+            output_fields=["Metaphone_Name","Title_Code","Title_Name"]
+        )
+        with open("viren1.txt", "w", encoding="utf-8") as f:
+            f.write(results)
+        print(results)
+        print("viren111111111111111111111111111111111111111111111111111111111111111116")
+        # with open("viren1.txt", "w+", encoding="utf-8") as f:
+        #     f.write("123345")
+        #     for result in output:
+        #         # Convert each result dictionary to a string and write to the file
+        #         f.write(f"Title Code: {result['Title_Code']}\n")
+        #         f.write(f"Title Name: {result['Title_Name']}\n")
+        #         f.write(f"Metaphone Name: {result['Metaphone_Name']}\n")
+        #         f.write(f"Score: {result['score']}\n")
+        #         f.write("\n")
+        # output=parsed_result(results)
+        # print(output)
+        # return results
+        return {"message": "data received successfully", "data": results}
     except Exception as e:
         return {"error": str(e)}, 500  # Return error message
+
+@app.get("/trademark/getdataontitle")
+async def get_data_title(name: str = Query(..., description="The name to search for")):
+    try:
+        model = SentenceTransformer('all-MiniLM-L6-v2')
+        all_data=[]
+        # name="SAMPURNA JAGRAN"
+        query_metaphone = get_metaphone(name)
+        query_vector = model.encode(name).tolist()
+        iterator=collection.search_iterator(
+            data=[query_vector],
+            anns_field="vector",
+            param={"metric_type": "COSINE", "params": {"nprobe": 384,}},
+            limit=200,
+            # expr=f"Metaphone_Name=='{query_metaphone}'",
+            output_fields=["Title_Name","Metaphone_Name","Title_Code"]
+        )
+        results = []
+
+        while True:
+            result = iterator.next()
+            if not result:
+                iterator.close()
+                break
+            
+            for hit in result:
+                results.append(hit.to_dict())
+                
+        print(len(results))
+        for i in range(len(results)):
+            all_data.append({
+                "Title_Code":results[i]['entity']['Title_Code'],
+                "Title_Name":results[i]['entity']['Title_Name'],
+                "Metaphone_Name":results[i]['entity']['Metaphone_Name'],
+                "distance":results[i]['distance']
+            })
+        df=pd.DataFrame(all_data)
+        file_path = "results.csv"
+        df.to_csv(file_path, index=False)
+        return FileResponse(
+            path=file_path,
+            filename="results.csv",
+            media_type="text/csv"
+        )
+            
+    except Exception as e:
+        return {"error": str(e)}, 500
+    # finally:
+    #     # Ensure the temporary file is deleted after the response
+    #     if os.path.exists("results.csv"):
+    #         os.remove("results.csv")
+
+
 
 @app.get("/trademark/deleteAllData")
 def delete_all_data():
     try:
         global collection
-        collection.drop()
+        collection.delete(expr="Auto_id >= 0")
         
     except Exception as e:
         return {"error": str(e)}, 500 
@@ -198,19 +373,9 @@ async def insert_data(data:List[TrademarkData]):
         print("ERROR",e)
         return {"error": str(e)}, 500 
 
-@app.get("/health")
-async def health_check():
-    return {"status": "healthy"}
-
-
 @app.get("/")
-async def root():
-    try:
-        return {"message": "Welcome to the API"}
-    except Exception as e:
-        # Return proper FastAPI response with status code
-        return {"error": str(e)}, 500
-
+async def getApi():
+    return "Hello"
 
 if __name__ == "__main__":
     import uvicorn

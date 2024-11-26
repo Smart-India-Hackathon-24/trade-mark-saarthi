@@ -1,0 +1,200 @@
+id: 454083262670675230, distance: 0.8467065095901489, entity: {'Metaphone_Name': 'AKLNTTJ', 'Title_Code': 'PONTAM00205', 'Title_Name': 'AKHILA INDIA IDHAZH'}
+id: 454083262670662674, distance: 0.86993807554245, entity: {'Metaphone_Name': 'JNJKRNNTLN', 'Title_Code': 'DELHIN07792', 'Title_Name': 'JAN JAGRAN AANDOLAN'}
+id: 454083262670675617, distance: 0.8732016682624817, entity: {'Metaphone_Name': 'ANTNPRJMKSN', 'Title_Code': 'TNENG00639', 'Title_Name': 'INDIAN BRIDGE MAGAZINE'}
+id: 454083262670674521, distance: 0.8884744644165039, entity: {'Metaphone_Name': 'ANTNJRNLSTSKT', 'Title_Code': 'MAHENG01804', 'Title_Name': 'INDIAN JOURNALISTS GUIDE'}
+id: 454083262670671215, distance: 0.8965613842010498, entity: {'Metaphone_Name': 'AKRKLTRLNJNRNKTT', 'Title_Code': 'DELENG00132', 'Title_Name': 'AGRICULTURAL ENGINEERING TODAY'}
+id: 454083262670662737, distance: 0.8982279300689697, entity: {'Metaphone_Name': 'AKJJKRN', 'Title_Code': 'PUNPUN04291', 'Title_Name': 'AAGAJ JAGRAN'}
+id: 454083262670673557, distance: 0.9141069650650024, entity: {'Metaphone_Name': 'ANTNJRNLFSKLMNJMNT', 'Title_Code': 'DELENG02857', 'Title_Name': 'INDIAN JOURNAL OF SCHOOL MANAGEMENT'}
+id: 454083262670676043, distance: 0.9168736934661865, entity: {'Metaphone_Name': 'ANTNJJMNTRPRTR', 'Title_Code': 'UPENG00536', 'Title_Name': 'INDIAN JUDGEMENT REPORTER'}
+id: 454083262670662774, distance: 0.9389809370040894, entity: {'Metaphone_Name': 'JNXKTJKRN', 'Title_Code': 'UPHIN41953', 'Title_Name': 'JAN SHAKTI JAGRAN'}
+id: 454083262670662842, distance: 0.9471560716629028, entity: {'Metaphone_Name': 'JKRNJT', 'Title_Code': 'UTTHIN02793', 'Title_Name': 'JAGRAN JYOTI'}
+id: 454083262670672445, distance: 0.9509354829788208, entity: {'Metaphone_Name': 'JKRKTT', 'Title_Code': 'RAJHIN27275', 'Title_Name': 'JAGRUK TODAY'}
+id: 454083262670675111, distance: 0.9576810002326965, entity: {'Metaphone_Name': 'JKTNT', 'Title_Code': 'MPHIN28622', 'Title_Name': 'JAGATA INDIA'}
+id: 454083262670676357, distance: 0.9598954319953918, entity: {'Metaphone_Name': 'ANTNJHTRLJ', 'Title_Code': 'WBENG00867', 'Title_Name': 'INDIAN GEOHYDROLOGY'}
+id: 454083262670662787, distance: 0.960757315158844, entity: {'Metaphone_Name': 'JKTRHKJKRN', 'Title_Code': 'UPHIN20717', 'Title_Name': 'JAGTA RAHEGA JAGRAN'}
+id: 454083262670662843, distance: 0.9678146839141846, entity: {'Metaphone_Name': 'JNXTNJKRN', 'Title_Code': 'UTTHIN05350', 'Title_Name': 'JAN CHETNA JAGRAN'}
+id: 454083262670673771, distance: 0.968981146812439, entity: {'Metaphone_Name': 'ANTNJRNLFRMTLJ', 'Title_Code': 'DELENG15405', 'Title_Name': 'INDIAN JOURNAL OF RHEUMATOLOGY'}
+id: 454083262670674293, distance: 0.9691044092178345, entity: {'Metaphone_Name': 'ANTNJ', 'Title_Code': 'KARENG04526', 'Title_Name': 'INDIAN AGE'}
+id: 454083262670674167, distance: 0.9691044092178345, entity: {'Metaphone_Name': 'ANTNJ', 'Title_Code': 'GUJENG00660', 'Title_Name': 'INDIAN AGE'}
+id: 454083262670675555, distance: 0.9691044092178345, entity: {'Metaphone_Name': 'ANTNJ', 'Title_Code': 'TNENG05054', 'Title_Name': 'INDIAN AGE'}
+id: 454083262670676327, distance: 0.9691044092178345, entity: {'Metaphone_Name': 'ANTNJ', 'Title_Code': 'WBHIN01600', 'Title_Name': 'INDIAN AGE'}
+id: 454083262670676601, distance: 0.972327470779419, entity: {'Metaphone_Name': 'JNSKTKT', 'Title_Code': 'CHHHIN02861', 'Title_Name': 'JAN AWAZ KI TAKAT'}
+id: 454083262670671213, distance: 0.9738991260528564, entity: {'Metaphone_Name': 'AKRKJTT', 'Title_Code': 'DELHIN27680', 'Title_Name': 'AGRA KHOJ TODAY'}
+id: 454083262670662781, distance: 0.9746519923210144, entity: {'Metaphone_Name': 'JLNJKRN', 'Title_Code': 'UPHIN04961', 'Title_Name': 'JALAUN JAGRAN'}
+id: 454083262670674422, distance: 0.9746675491333008, entity: {'Metaphone_Name': 'ANKLNTNJRNL', 'Title_Code': 'KERBIL01927', 'Title_Name': 'ANGLO INDIAN JAURNAL'}
+id: 454083262670674966, distance: 0.9798399209976196, entity: {'Metaphone_Name': 'ANTNJRNLFTRNSPRTMNJMNT', 'Title_Code': 'MAHENG07244', 'Title_Name': 'INDIAN JOURNAL OF TRANSPORT MANAGEMENT'}
+id: 454083262670665824, distance: 0.9799439907073975, entity: {'Metaphone_Name': 'AKNMKTMSNL', 'Title_Code': 'MAHENG01124', 'Title_Name': 'ECONOMIC TIMES ANNUAL'}
+id: 454083262670674702, distance: 0.9803860187530518, entity: {'Metaphone_Name': 'ANTNMNJMNT', 'Title_Code': 'MAHENG08262', 'Title_Name': 'INDIAN MANAGEMENT'}
+id: 454083262670673721, distance: 0.9803860187530518, entity: {'Metaphone_Name': 'ANTNMNJMNT', 'Title_Code': 'DELENG07242', 'Title_Name': 'INDIAN MANAGEMENT'}
+id: 454083262670676169, distance: 0.9804545044898987, entity: {'Metaphone_Name': 'ANTNJRNLFTLJ', 'Title_Code': 'UPENG02072', 'Title_Name': 'INDIAN JOURNAL OF OTOLOGY'}
+id: 454083262670675522, distance: 0.9824574589729309, entity: {'Metaphone_Name': 'ANKLNTN', 'Title_Code': 'TNENG01960', 'Title_Name': 'ANGLO INDIAN'}
+id: 454083262670671270, distance: 0.9824705123901367, entity: {'Metaphone_Name': 'JKRKTTT', 'Title_Code': 'DELHIN16340', 'Title_Name': 'JAGRUKTA TODAY'}
+id: 454083262670673153, distance: 0.9849919080734253, entity: {'Metaphone_Name': 'ANTNJRNLFTRSNS', 'Title_Code': 'DELENG14439', 'Title_Name': 'INDIAN JOURNAL OF DAIRY SCIENCE'}
+id: 454083262670662704, distance: 0.9855140447616577, entity: {'Metaphone_Name': 'AKPRPTJKRN', 'Title_Code': 'MAHHIN09384', 'Title_Name': 'YUG PRABHAT JAGRAN'}
+id: 454083262670673716, distance: 0.9913410544395447, entity: {'Metaphone_Name': 'AKNMNT', 'Title_Code': 'DELHIN12879', 'Title_Name': 'ECONOMY INDIA'}
+id: 454083262670673603, distance: 0.9913410544395447, entity: {'Metaphone_Name': 'AKNMNT', 'Title_Code': 'DELENG15314', 'Title_Name': 'ECONOMY INDIA'}
+id: 454083262670672990, distance: 0.9917973875999451, entity: {'Metaphone_Name': 'ANTNJRNLST', 'Title_Code': 'APTEL14513', 'Title_Name': 'INDIAN JOURNALIST'}
+id: 454083262670675362, distance: 0.9924367666244507, entity: {'Metaphone_Name': 'ANTNJRNLFKRNTLJ', 'Title_Code': 'RAJENG00160', 'Title_Name': 'INDIAN JOURNAL OF GERONTOLOGY'}
+id: 454083262670672647, distance: 0.9927383661270142, entity: {'Metaphone_Name': 'JKTT', 'Title_Code': 'UPHIN46539', 'Title_Name': 'JAAGO TODAY'}
+id: 454083262670672888, distance: 0.9927383661270142, entity: {'Metaphone_Name': 'JKTT', 'Title_Code': 'WBENG00683', 'Title_Name': 'GEC TODAY'}
+id: 454083262670674683, distance: 0.9940366148948669, entity: {'Metaphone_Name': 'ANTNJMLJST', 'Title_Code': 'MAHENG01680', 'Title_Name': 'INDIAN GEMMOLOGIST'}
+id: 454083262670672093, distance: 0.9940974116325378, entity: {'Metaphone_Name': 'JNSRJMTT', 'Title_Code': 'MPHIN33936', 'Title_Name': 'JANSWARAJYM TODAY'}
+id: 454083262670675550, distance: 0.994267463684082, entity: {'Metaphone_Name': 'JNRNTNS', 'Title_Code': 'TNTAM22021', 'Title_Name': 'JUNIOR INDIANS'}
+id: 454083262670674481, distance: 0.9950727224349976, entity: {'Metaphone_Name': 'JRNLFNTNRKT', 'Title_Code': 'KERENG00285', 'Title_Name': 'JOURNAL OF INDIAN ROCKET'}
+id: 454083262670675232, distance: 0.9956213235855103, entity: {'Metaphone_Name': 'ANTNJRNLFRLJ', 'Title_Code': 'PONENG00064', 'Title_Name': 'INDIAN JOURNAL OF UROLOGY'}
+id: 454083262670673612, distance: 0.9979468584060669, entity: {'Metaphone_Name': 'ANTNRTJ', 'Title_Code': 'DELENG02625', 'Title_Name': 'INDIAN HERITAGE'}
+id: 454083262670673131, distance: 0.9981117248535156, entity: {'Metaphone_Name': 'ANTNPRJRLT', 'Title_Code': 'DELENG02681', 'Title_Name': 'INDIAN BRIDGE WORLD'}
+id: 454083262670673989, distance: 0.9984978437423706, entity: {'Metaphone_Name': 'AKNMKNT', 'Title_Code': 'DELENG14621', 'Title_Name': 'ECONOMIC INDIA'}
+id: 454083262670673448, distance: 0.9984978437423706, entity: {'Metaphone_Name': 'AKNMKNT', 'Title_Code': 'DELENG12191', 'Title_Name': 'ECONOMICA INDIA'}
+id: 454083262670674213, distance: 0.999221920967102, entity: {'Metaphone_Name': 'ANTNJRNLFTSNS', 'Title_Code': 'HARENG00314', 'Title_Name': 'INDIAN JOURNAL OF WEED SCIENCE'}
+id: 454083262670673290, distance: 1.0010086297988892, entity: {'Metaphone_Name': 'AKLNT', 'Title_Code': 'DELHIN16531', 'Title_Name': 'AKHIL INDIA'}
+id: 454083262670675818, distance: 1.0010086297988892, entity: {'Metaphone_Name': 'AKLNT', 'Title_Code': 'UPURD05264', 'Title_Name': 'AKHIL INDIA'}
+id: 454083262670673226, distance: 1.0010086297988892, entity: {'Metaphone_Name': 'AKLNT', 'Title_Code': 'DELURD02934', 'Title_Name': 'AKHIL INDIA'}
+id: 454083262670673196, distance: 1.0010086297988892, entity: {'Metaphone_Name': 'AKLNT', 'Title_Code': 'DELURD03036', 'Title_Name': 'AKHIL INDIA'}
+id: 454083262670676322, distance: 1.0012598037719727, entity: {'Metaphone_Name': 'ANTTKNLJ', 'Title_Code': 'WBENG03314', 'Title_Name': 'INDIA & TECHNOLOGY'}
+id: 454083262670662839, distance: 1.001374363899231, entity: {'Metaphone_Name': 'JNJKRNSMKR', 'Title_Code': 'UTTHIN05712', 'Title_Name': 'JANJAGRAN SAMACHAR'}
+id: 454083262670674420, distance: 1.0015859603881836, entity: {'Metaphone_Name': 'SKSJRNLFNTNMNJMNT', 'Title_Code': 'KERENG02197', 'Title_Name': 'SCMS JOURNAL OF INDIAN MANAGEMENT'}
+id: 454083262670674632, distance: 1.0016908645629883, entity: {'Metaphone_Name': 'ANTNJRNLFPRNS', 'Title_Code': 'MAHENG13356', 'Title_Name': 'INDIAN JOURNAL OF BURNS'}
+id: 454083262670673105, distance: 1.0016908645629883, entity: {'Metaphone_Name': 'ANTNJRNLFPRNS', 'Title_Code': 'DELENG08468', 'Title_Name': 'INDIAN JOURNAL OF BURNS'}
+id: 454083262670662693, distance: 1.0017297267913818, entity: {'Metaphone_Name': 'SMJTJKRN', 'Title_Code': 'MAHMAR18580', 'Title_Name': 'SAMAJWADI JAGRAN'}
+id: 454083262670662848, distance: 1.0018107891082764, entity: {'Metaphone_Name': 'JNJKRN', 'Title_Code': 'WBHIN00332', 'Title_Name': 'JAIN JAGRAN'}
+id: 454083262670662676, distance: 1.0018107891082764, entity: {'Metaphone_Name': 'JNJKRN', 'Title_Code': 'GUJGUJ15098', 'Title_Name': 'JAN JAGRAN'}
+id: 454083262670662640, distance: 1.0018107891082764, entity: {'Metaphone_Name': 'JNJKRN', 'Title_Code': 'DELPUN00627', 'Title_Name': 'JAN JAGRAN'}
+id: 454083262670662741, distance: 1.0018107891082764, entity: {'Metaphone_Name': 'JNJKRN', 'Title_Code': 'PUNPUN03786', 'Title_Name': 'JAN JAGRAN'}
+id: 454083262670674817, distance: 1.0024330615997314, entity: {'Metaphone_Name': 'ANTNJRNLFNRSRKR', 'Title_Code': 'MAHENG13312', 'Title_Name': 'INDIAN JOURNAL OF NEUROSURGERY'}
+id: 454083262670673847, distance: 1.0033581256866455, entity: {'Metaphone_Name': 'ANTNJRMLFRTLJ', 'Title_Code': 'DELENG11194', 'Title_Name': 'INDIAN JOURMAL OF RADIOLOGY'}
+id: 454083262670674409, distance: 1.0037689208984375, entity: {'Metaphone_Name': 'ANKLNTNJRNLKRL', 'Title_Code': 'KERENG00812', 'Title_Name': 'ANGLO INDIAN JOURNAL KERALA'}
+id: 454083262670662784, distance: 1.0054106712341309, entity: {'Metaphone_Name': 'JNPRJKRN', 'Title_Code': 'UPHIN05010', 'Title_Name': 'JAUNPUR JAGRAN'}
+id: 454083262670674382, distance: 1.0061564445495605, entity: {'Metaphone_Name': 'ANTNJRNLFNFLTRKTLFR', 'Title_Code': 'KARENG03936', 'Title_Name': 'INDIAN JOURNAL OF NOVEL DRUG DELIVERY'}
+id: 454083262670662728, distance: 1.0076897144317627, entity: {'Metaphone_Name': 'RSTRJKRN', 'Title_Code': 'MPHIN14806', 'Title_Name': 'RASTRA JAGRAN'}
+id: 454083262670671446, distance: 1.0108184814453125, entity: {'Metaphone_Name': 'AKSMNXNTTSRSK', 'Title_Code': 'DELBIL04131', 'Title_Name': 'EXAMINATION TODAY-SR.SEC.'}
+id: 454083262670672920, distance: 1.0117563009262085, entity: {'Metaphone_Name': 'SRJHNSKNT', 'Title_Code': 'APTEL09304', 'Title_Name': 'SARE JAHANSE ACHHA INDIA'}
+id: 454083262670671648, distance: 1.0119853019714355, entity: {'Metaphone_Name': 'JNPRMKLTT', 'Title_Code': 'HPHIN00540', 'Title_Name': 'JANPRIYA HIMACHAL TODAY'}
+id: 454083262670662754, distance: 1.0126152038574219, entity: {'Metaphone_Name': 'JNJKRNPN', 'Title_Code': 'RAJHIN09487', 'Title_Name': 'JAIN JAGRAN ABHIYAN'}
+id: 454083262670670223, distance: 1.0131795406341553, entity: {'Metaphone_Name': 'AKTSRJTMS', 'Title_Code': 'UPHIN19941', 'Title_Name': 'UGTA SURAJ TIMES'}
+id: 454083262670675497, distance: 1.0144453048706055, entity: {'Metaphone_Name': 'JNTNS', 'Title_Code': 'TNBIL01982', 'Title_Name': 'JAI INDIA NEWS'}
+id: 454083262670676386, distance: 1.0186901092529297, entity: {'Metaphone_Name': 'ANTNLKTRKLMKSN', 'Title_Code': 'WBENG00861', 'Title_Name': 'INDIAN ELECTRICAL MAGAZINE'}
+id: 454083262670662762, distance: 1.0192114114761353, entity: {'Metaphone_Name': 'JTJKRN', 'Title_Code': 'UPHIN05173', 'Title_Name': 'JYOTI JAGRAN'}
+id: 454083262670662662, distance: 1.0192114114761353, entity: {'Metaphone_Name': 'JTJKRN', 'Title_Code': 'DELBIL11566', 'Title_Name': 'JAT JAGRAN'}
+id: 454083262670662773, distance: 1.020833969116211, entity: {'Metaphone_Name': 'JNTJKRNXKT', 'Title_Code': 'UPHIN20546', 'Title_Name': 'JANTA JAGRAN SHAKTI'}
+id: 454083262670673816, distance: 1.0231609344482422, entity: {'Metaphone_Name': 'ANTNJFTRJRNL', 'Title_Code': 'DELENG07171', 'Title_Name': 'INDIAN GIFTWARE JOURNAL'}
+id: 454083262670676220, distance: 1.0232208967208862, entity: {'Metaphone_Name': 'ANTNJRNLPTMTR', 'Title_Code': 'UPENG00523', 'Title_Name': 'INDIAN JOURNAL OPTOMETRY'}
+id: 454083262670662642, distance: 1.0235306024551392, entity: {'Metaphone_Name': 'JNTJKRN', 'Title_Code': 'DELBIL05833', 'Title_Name': 'JANHIT JAGRAN'}
+id: 454083262670675776, distance: 1.0249555110931396, entity: {'Metaphone_Name': 'ANTNFTKRFRSJRNLNTKT', 'Title_Code': 'UPENG02482', 'Title_Name': 'INDIAN PHOTOGRAPHERS JOURNAL AND GUIDE'}
+id: 454083262670675349, distance: 1.0255048274993896, entity: {'Metaphone_Name': 'JTNTNS', 'Title_Code': 'RAJHIN14793', 'Title_Name': 'JAAT INDIA NEWS'}
+id: 454083262670675511, distance: 1.0268868207931519, entity: {'Metaphone_Name': 'ANTNJRNLFKRMNLJ', 'Title_Code': 'TNENG00695', 'Title_Name': 'INDIAN JOURNAL OF CRIMINOLOGY'}
+id: 454083262670671252, distance: 1.0285215377807617, entity: {'Metaphone_Name': 'RJRNKTT', 'Title_Code': 'DELHIN28681', 'Title_Name': 'RAJRANG TODAY'}
+id: 454083262670674527, distance: 1.0290602445602417, entity: {'Metaphone_Name': 'ANTNJRNLFSRKLTR', 'Title_Code': 'MAHENG07243', 'Title_Name': 'INDIAN JOURNAL OF SERICULTURE'}
+id: 454083262670673899, distance: 1.0292038917541504, entity: {'Metaphone_Name': 'ANTNRTKRSJRNL', 'Title_Code': 'DELENG03067', 'Title_Name': 'INDIAN RED CROSS JOURNAL'}
+id: 454083262670671290, distance: 1.0322365760803223, entity: {'Metaphone_Name': 'AKNMTT', 'Title_Code': 'DELENG14496', 'Title_Name': 'ECONOMY TODAY'}
+id: 454083262670675670, distance: 1.0332573652267456, entity: {'Metaphone_Name': 'ANTNJRNLFMSNS', 'Title_Code': 'TNENG00701', 'Title_Name': 'INDIAN JOURNAL OF HOME SCIENCE'}
+id: 454083262670672317, distance: 1.0337059497833252, entity: {'Metaphone_Name': 'AKRTTTRPN', 'Title_Code': 'MPHIN31323', 'Title_Name': 'AGAR TODAY DARPAN'}
+id: 454083262670675254, distance: 1.0351638793945312, entity: {'Metaphone_Name': 'ANTNJRNLFKLJ', 'Title_Code': 'PUNENG00262', 'Title_Name': 'INDIAN JOUURNAL OF ECOLOGY'}
+id: 454083262670673322, distance: 1.0361735820770264, entity: {'Metaphone_Name': 'ANTNJRNLFNMTLJ', 'Title_Code': 'DELENG11191', 'Title_Name': 'INDIAN JOURNAL OF NEMATOLOGY'}
+id: 454083262670673318, distance: 1.0361735820770264, entity: {'Metaphone_Name': 'ANTNJRNLFNMTLJ', 'Title_Code': 'DELENG11986', 'Title_Name': 'INDIAN JOURNAL OF NEMATOLOGY'}
+id: 454083262670674833, distance: 1.0368038415908813, entity: {'Metaphone_Name': 'ANTNJRNLFPTTRKTRMTLJ', 'Title_Code': 'MAHENG12949', 'Title_Name': 'INDIAN JOURNAL OF PAEDIATRIC DERMATOLOGY'}
+id: 454083262670676431, distance: 1.0379581451416016, entity: {'Metaphone_Name': 'ANTNJRNLFMKRPLJ', 'Title_Code': 'WBENG03325', 'Title_Name': 'INDIAN JOURNAL OF MICROBIOLOGY'}
+id: 454083262670676604, distance: 1.0381362438201904, entity: {'Metaphone_Name': 'ASJHN', 'Title_Code': 'DELHIN16258', 'Title_Name': 'AWAZ E JAHAN'}
+id: 454083262670662809, distance: 1.0385355949401855, entity: {'Metaphone_Name': 'AKJKRNTMS', 'Title_Code': 'UPHIN50917', 'Title_Name': 'YUG JAGRAN TIMES'}
+id: 454083262670676345, distance: 1.0389001369476318, entity: {'Metaphone_Name': 'ANTNRTJRNL', 'Title_Code': 'WBENG02254', 'Title_Name': 'INDIAN HEART JOURNAL'}
+id: 454083262670673366, distance: 1.0391461849212646, entity: {'Metaphone_Name': 'ANTNNLNTMSNPLTN', 'Title_Code': 'DELENG02957', 'Title_Name': 'INDIAN INLAND MISSION BULLETIN'}
+id: 454083262670676199, distance: 1.04056978225708, entity: {'Metaphone_Name': 'ANTNMSJ', 'Title_Code': 'UPURD00634', 'Title_Name': 'INDIAN MESSAGE'}
+id: 454083262670662831, distance: 1.0420072078704834, entity: {'Metaphone_Name': 'JKRN', 'Title_Code': 'UPHIN13936', 'Title_Name': 'JAGRAN'}
+id: 454083262670662846, distance: 1.0420072078704834, entity: {'Metaphone_Name': 'JKRN', 'Title_Code': 'WBBEN08039', 'Title_Name': 'JAGRAN'}
+id: 454083262670662763, distance: 1.0420072078704834, entity: {'Metaphone_Name': 'JKRN', 'Title_Code': 'UPHIN02761', 'Title_Name': 'JAGRAN'}
+id: 454083262670662759, distance: 1.0420072078704834, entity: {'Metaphone_Name': 'JKRN', 'Title_Code': 'UPHIN13782', 'Title_Name': 'JAGRAN'}
+id: 454083262670662746, distance: 1.0420072078704834, entity: {'Metaphone_Name': 'JKRN', 'Title_Code': 'RAJHIN06338', 'Title_Name': 'JAGRAN'}
+id: 454083262670662825, distance: 1.0420072078704834, entity: {'Metaphone_Name': 'JKRN', 'Title_Code': 'UPHIN26570', 'Title_Name': 'JAGRAN'}
+id: 454083262670674783, distance: 1.0423263311386108, entity: {'Metaphone_Name': 'ANTNJRNLFKRTKLKRMTSN', 'Title_Code': 'MAHENG12767', 'Title_Name': 'INDIAN JOURNAL OF CRITICAL CARE MEDICINE'}
+id: 454083262670662632, distance: 1.0438166856765747, entity: {'Metaphone_Name': 'SMPRNJKRN', 'Title_Code': 'BIHHIN05150', 'Title_Name': 'SAMPURNA JAGRAN'}
+id: 454083262670662633, distance: 1.0438166856765747, entity: {'Metaphone_Name': 'SMPRNJKRN', 'Title_Code': 'BIHHIN04876', 'Title_Name': 'SAMPURNA JAGRAN'}
+id: 454083262670662628, distance: 1.0438166856765747, entity: {'Metaphone_Name': 'SMPRNJKRN', 'Title_Code': 'BIHHIN05227', 'Title_Name': 'SAMPURNA JAGRAN'}
+id: 454083262670662757, distance: 1.0438166856765747, entity: {'Metaphone_Name': 'SMPRNJKRN', 'Title_Code': 'SIKHIN00007', 'Title_Name': 'SAMPURNA JAGRAN'}
+id: 454083262670672423, distance: 1.0443246364593506, entity: {'Metaphone_Name': 'SNJFNTT', 'Title_Code': 'RAJHIN16864', 'Title_Name': 'SANJEEVANI TODAY'}
+id: 454083262670672391, distance: 1.0443246364593506, entity: {'Metaphone_Name': 'SNJFNTT', 'Title_Code': 'RAJHIN17126', 'Title_Name': 'SANJEEVANI TODAY'}
+id: 454083262670673922, distance: 1.0448869466781616, entity: {'Metaphone_Name': 'ANTNLNKJ', 'Title_Code': 'DELHIN06569', 'Title_Name': 'INDIAN LANGUAGE'}
+id: 454083262670674281, distance: 1.0476927757263184, entity: {'Metaphone_Name': 'ANJLTNT', 'Title_Code': 'JKENG01001', 'Title_Name': 'ENGILD INDIA'}
+id: 454083262670664884, distance: 1.0483248233795166, entity: {'Metaphone_Name': 'AKLNTMS', 'Title_Code': 'HARBIL00808', 'Title_Name': 'UKLANA TIMES'}
+id: 454083262670675340, distance: 1.0496091842651367, entity: {'Metaphone_Name': 'JTNTNJRNLFKLNKLTRMTLJ', 'Title_Code': 'RAJENG01070', 'Title_Name': 'JDA INDIAN JOURNAL OF CLINICAL DERMATOLOGY'}
+id: 454083262670675415, distance: 1.0496652126312256, entity: {'Metaphone_Name': 'ANTNJRNLFPTN', 'Title_Code': 'TELENG00343', 'Title_Name': 'INDIAN JOURNAL OF BOTANY'}
+id: 454083262670675886, distance: 1.0511269569396973, entity: {'Metaphone_Name': 'AKRKLTRLMFMNTNTNS', 'Title_Code': 'UPHIN49904', 'Title_Name': 'AGRICULTURAL MOVEMENT INDIA NEWS'}
+id: 454083262670664559, distance: 1.0522775650024414, entity: {'Metaphone_Name': 'AKLNJNTMS', 'Title_Code': 'GUJGUJ16125', 'Title_Name': 'AKHIL AANJANA TIMES'}
+id: 454083262670673497, distance: 1.052827000617981, entity: {'Metaphone_Name': 'ANTNJL', 'Title_Code': 'DELENG02963', 'Title_Name': 'INDIAN JEWEL'}
+id: 454083262670676242, distance: 1.052827000617981, entity: {'Metaphone_Name': 'ANTNJL', 'Title_Code': 'UTTHIN00355', 'Title_Name': 'INDIAN UJALA'}
+id: 454083262670674564, distance: 1.0528523921966553, entity: {'Metaphone_Name': 'ANTNKTNJRNL', 'Title_Code': 'MAHENG07228', 'Title_Name': 'INDIAN COTTON JOURNAL'}
+id: 454083262670673301, distance: 1.0531060695648193, entity: {'Metaphone_Name': 'ANTNJRNLFKRTRKR', 'Title_Code': 'DELENG18215', 'Title_Name': 'INDIAN JOURNAL OF GERIATRIC CARE'}
+id: 454083262670675463, distance: 1.0532065629959106, entity: {'Metaphone_Name': 'AKPRNRNT', 'Title_Code': 'TELENG00811', 'Title_Name': 'ECOPRENEUR INDIA'}
+id: 454083262670676458, distance: 1.0532722473144531, entity: {'Metaphone_Name': 'ANTNJRNLFTRMTLJ', 'Title_Code': 'WBENG02449', 'Title_Name': 'INDIAN JOURNAL OF DERMATOLOGY'}
+id: 454083262670672898, distance: 1.0536842346191406, entity: {'Metaphone_Name': 'PRJKTMNJMNTTT', 'Title_Code': 'WBENG04249', 'Title_Name': 'PROJECT MANAGEMENT TODAY'}
+id: 454083262670662793, distance: 1.0538442134857178, entity: {'Metaphone_Name': 'JKRNKTKLHN', 'Title_Code': 'UPHIN35734', 'Title_Name': 'JAGRAN KHET KHALIHAN'}
+id: 454083262670671972, distance: 1.0544342994689941, entity: {'Metaphone_Name': 'JTKTT', 'Title_Code': 'MPHIN32164', 'Title_Name': 'GITIKA TODAY'}
+id: 454083262670662778, distance: 1.0560309886932373, entity: {'Metaphone_Name': 'JNJKRNTMS', 'Title_Code': 'UPHIN20079', 'Title_Name': 'JAN JAGRAN TIMES'}
+id: 454083262670662626, distance: 1.0560309886932373, entity: {'Metaphone_Name': 'JNJKRNTMS', 'Title_Code': 'NOFHIN00556', 'Title_Name': 'JAN JAGRAN TIMES'}
+id: 454083262670672974, distance: 1.056879997253418, entity: {'Metaphone_Name': 'ANTNLJLTR', 'Title_Code': 'APENG03312', 'Title_Name': 'INDIAN LEGISLATURE'}
+id: 454083262670676407, distance: 1.0572587251663208, entity: {'Metaphone_Name': 'AKNMKRNNKSFNT', 'Title_Code': 'WBENG04362', 'Title_Name': 'ECONOMIC EARNINGS OF INDIA'}
+id: 454083262670662791, distance: 1.057356834411621, entity: {'Metaphone_Name': 'JKRNJRNLFMNJMNTNTTKNLJ', 'Title_Code': 'UPENG04360', 'Title_Name': 'JAGRAN JOURNAL OF MANAGEMENT AND TECHNOLOGY'}
+id: 454083262670674626, distance: 1.0577952861785889, entity: {'Metaphone_Name': 'ANTNJRNLFKNSR', 'Title_Code': 'MAHENG07237', 'Title_Name': 'INDIAN JOURNAL OF CANCER'}
+id: 454083262670675321, distance: 1.0585776567459106, entity: {'Metaphone_Name': 'AJLNT', 'Title_Code': 'RAJHIN17469', 'Title_Name': 'UJJWAL INDIA'}
+id: 454083262670675344, distance: 1.0585776567459106, entity: {'Metaphone_Name': 'AJLNT', 'Title_Code': 'RAJBIL01717', 'Title_Name': 'UJJWAL INDIA'}
+id: 454083262670662705, distance: 1.0588454008102417, entity: {'Metaphone_Name': 'JNJNJKRN', 'Title_Code': 'MPHIN11121', 'Title_Name': 'JAN JAN JAGRAN'}
+id: 454083262670662786, distance: 1.0588454008102417, entity: {'Metaphone_Name': 'JNJNJKRN', 'Title_Code': 'UPHIN42727', 'Title_Name': 'JAN JAN JAGRAN'}
+id: 454083262670674210, distance: 1.0598115921020508, entity: {'Metaphone_Name': 'JKNTJK', 'Title_Code': 'HARHIN11070', 'Title_Name': 'JAGO INDIA JAGO'}
+id: 454083262670673084, distance: 1.0598249435424805, entity: {'Metaphone_Name': 'JRNLFLNTRKTKTS', 'Title_Code': 'DELENG16840', 'Title_Name': 'JOURNAL OF ALL INDIA ARCHITECTS'}
+id: 454083262670674763, distance: 1.0600059032440186, entity: {'Metaphone_Name': 'ANTNRNTSTRJRNL', 'Title_Code': 'MAHENG04399', 'Title_Name': 'INDIAN WIRE INDUSTRY JOURNAL'}
+id: 454083262670676117, distance: 1.0621566772460938, entity: {'Metaphone_Name': 'AKSPRSNFNT', 'Title_Code': 'UPHIN45414', 'Title_Name': 'EXPRESSION OF INDIA'}
+id: 454083262670674953, distance: 1.062368392944336, entity: {'Metaphone_Name': 'ANTJRNLN', 'Title_Code': 'MAHBIL06724', 'Title_Name': 'INDIA JOURNOLINE'}
+id: 454083262670673787, distance: 1.0627233982086182, entity: {'Metaphone_Name': 'ANTNJRNLFL0KRKLTNTMNJMNT', 'Title_Code': 'DELENG17817', 'Title_Name': 'INDIAN JOURNAL OF HEALTHCARE QUALITY AND MANAGEMENT'}
+id: 454083262670671722, distance: 1.0638086795806885, entity: {'Metaphone_Name': 'KRJLTT', 'Title_Code': 'LDBIL00005', 'Title_Name': 'KARGIL TODAY'}
+id: 454083262670674489, distance: 1.0646140575408936, entity: {'Metaphone_Name': 'ANTNPJ', 'Title_Code': 'KERMAL12393', 'Title_Name': 'INDIAN PAGE'}
+id: 454083262670671391, distance: 1.065101146697998, entity: {'Metaphone_Name': 'JNRLKNLJTT', 'Title_Code': 'DELENG02262', 'Title_Name': 'GENERAL KNOWLEDGE TODAY'}
+id: 454083262670673608, distance: 1.06534743309021, entity: {'Metaphone_Name': 'ANTNJNRLFKRKLTRSNS', 'Title_Code': 'DELENG16376', 'Title_Name': 'INDIAN JOUNRAL OF AGRICULTURE SCIENCE'}
+id: 454083262670662707, distance: 1.0666033029556274, entity: {'Metaphone_Name': 'JKRNLRF', 'Title_Code': 'MPENG01335', 'Title_Name': 'JAGRAN LAW REVIEW'}
+id: 454083262670673311, distance: 1.0669264793395996, entity: {'Metaphone_Name': 'ANTNJRNLFSSLSKRT', 'Title_Code': 'DELENG12928', 'Title_Name': 'INDIAN JOURNAL OF SOCIAL SECURITY'}
+id: 454083262670675869, distance: 1.066980004310608, entity: {'Metaphone_Name': 'ANTNSSLJKLPLTN', 'Title_Code': 'UPENG01515', 'Title_Name': 'INDIAN SOCILOGICAL BULIETIN'}
+id: 454083262670674552, distance: 1.0680104494094849, entity: {'Metaphone_Name': 'ANTNJRNLFKSTRNTRLJ', 'Title_Code': 'MAHENG01882', 'Title_Name': 'INDIAN JOURNAL OF GASTROENTEROLOGY'}
+id: 454083262670672327, distance: 1.06826913356781, entity: {'Metaphone_Name': 'SRNJTT', 'Title_Code': 'MPHIN31415', 'Title_Name': 'SIRONJ TODAY'}
+id: 454083262670676470, distance: 1.06975257396698, entity: {'Metaphone_Name': 'ANTNJRNLFNTSTRLMTSN', 'Title_Code': 'WBENG03324', 'Title_Name': 'INDIAN JOURNAL OF INDUSTRIAL MEDICINE'}
+id: 454083262670675611, distance: 1.06975257396698, entity: {'Metaphone_Name': 'ANTNJRNLFNTSTRLMTSN', 'Title_Code': 'TNENG03225', 'Title_Name': 'INDIAN JOURNAL OF INDUSTRIAL MEDICINE'}
+id: 454083262670676445, distance: 1.06975257396698, entity: {'Metaphone_Name': 'ANTNJRNLFNTSTRLMTSN', 'Title_Code': 'WBENG03323', 'Title_Name': 'INDIAN JOURNAL OF INDUSTRIAL MEDICINE'}
+id: 454083262670671912, distance: 1.0699526071548462, entity: {'Metaphone_Name': 'ANJLTT', 'Title_Code': 'MPHIN29635', 'Title_Name': 'ANJALI TODAY'}
+id: 454083262670672564, distance: 1.0699526071548462, entity: {'Metaphone_Name': 'ANJLTT', 'Title_Code': 'TNTAM22390', 'Title_Name': 'ANJAL TODAY'}
+id: 454083262670671931, distance: 1.070162057876587, entity: {'Metaphone_Name': 'JNSMPRKTT', 'Title_Code': 'MPHIN25817', 'Title_Name': 'JANSAMPARK TODAY'}
+id: 454083262670672249, distance: 1.071204423904419, entity: {'Metaphone_Name': 'JNSRTT', 'Title_Code': 'MPHIN33391', 'Title_Name': 'JANSWAR TODAY'}
+id: 454083262670675033, distance: 1.0732643604278564, entity: {'Metaphone_Name': 'ANTNJRNLFSLJ', 'Title_Code': 'MPENG00103', 'Title_Name': 'INDIAN JOURNAL OF ZOOLOGY'}
+id: 454083262670676356, distance: 1.0734789371490479, entity: {'Metaphone_Name': 'ANTNJRNLFR0SNS', 'Title_Code': 'WBENG00993', 'Title_Name': 'INDIAN JOURNAL OF EARTH SCIENCE'}
+id: 454083262670672768, distance: 1.073980450630188, entity: {'Metaphone_Name': 'SNJTT', 'Title_Code': 'UPHIN45104', 'Title_Name': 'SANJAY TODAY'}
+id: 454083262670673602, distance: 1.0741808414459229, entity: {'Metaphone_Name': 'ANNTNJRN', 'Title_Code': 'DELENG16235', 'Title_Name': 'AN INDIAN JOURNEY'}
+id: 454083262670675915, distance: 1.0750946998596191, entity: {'Metaphone_Name': 'ANTNJRNLFKMNTMTSN', 'Title_Code': 'UPENG00545', 'Title_Name': 'INDIAN JOURNAL OF COMMUNITY MEDICINE'}
+id: 454083262670673036, distance: 1.0750946998596191, entity: {'Metaphone_Name': 'ANTNJRNLFKMNTMTSN', 'Title_Code': 'CHAENG00844', 'Title_Name': 'INDIAN JOURNAL OF COMMUNITY MEDICINE'}
+id: 454083262670674874, distance: 1.0751008987426758, entity: {'Metaphone_Name': 'ANTNJRNLFMTKLMKRPLJ', 'Title_Code': 'MAHENG12824', 'Title_Name': 'INDIAN JOURNAL OF MEDICAL MICROBIOLOGY'}
+id: 454083262670675991, distance: 1.0751445293426514, entity: {'Metaphone_Name': 'JSTNTNS', 'Title_Code': 'UPHIN44774', 'Title_Name': 'JUST INDIA NEWS'}
+id: 454083262670676116, distance: 1.0751445293426514, entity: {'Metaphone_Name': 'JSTNTNS', 'Title_Code': 'UPHIN42050', 'Title_Name': 'JUST INDIA NEWS'}
+id: 454083262670675989, distance: 1.0751445293426514, entity: {'Metaphone_Name': 'JSTNTNS', 'Title_Code': 'UPENG03959', 'Title_Name': 'JUST INDIA NEWS'}
+id: 454083262670674856, distance: 1.0751636028289795, entity: {'Metaphone_Name': 'ANTNNRJPSTRKTS', 'Title_Code': 'MAHENG01662', 'Title_Name': 'INDIAN ENERGY ABSTRACTS'}
+id: 454083262670674619, distance: 1.0754756927490234, entity: {'Metaphone_Name': 'ANTNJRNLFPN', 'Title_Code': 'MAHENG13378', 'Title_Name': 'INDIAN JOURNAL OF PAIN'}
+id: 454083262670673147, distance: 1.075811505317688, entity: {'Metaphone_Name': 'KKKLNTNRJNNSLTR', 'Title_Code': 'DELENG00986', 'Title_Name': 'COCA COLA INDIAN REGION NEWSLETTER'}
+id: 454083262670663281, distance: 1.077880859375, entity: {'Metaphone_Name': 'JNJJRTMS', 'Title_Code': 'CHHHIN16163', 'Title_Name': 'JANJGIR TIMES'}
+id: 454083262670662792, distance: 1.0784114599227905, entity: {'Metaphone_Name': 'JKRNJX', 'Title_Code': 'UPBIL03521', 'Title_Name': 'JAGRAN JOSH'}
+id: 454083262670676430, distance: 1.0786218643188477, entity: {'Metaphone_Name': 'AKKNTNJRNLFSRMKS', 'Title_Code': 'WBENG04466', 'Title_Name': 'IIC-INDIAN JOURNAL OF CERAMICS'}
+id: 454083262670662690, distance: 1.0791995525360107, entity: {'Metaphone_Name': 'JKRNMNTR', 'Title_Code': 'JHAHIN01022', 'Title_Name': 'JAGRAN MANTRA'}
+id: 454083262670675763, distance: 1.0794376134872437, entity: {'Metaphone_Name': 'AKTLNT', 'Title_Code': 'UPHIN49999', 'Title_Name': 'ACTUAL INDIA'}
+id: 454083262670675373, distance: 1.0810095071792603, entity: {'Metaphone_Name': 'AKNTRRXTRNTNS', 'Title_Code': 'RAJHIN17249', 'Title_Name': 'YUGANTAR RASHTRIYA INDIA NEWS'}
+id: 454083262670662798, distance: 1.0814902782440186, entity: {'Metaphone_Name': 'SRJJKRN', 'Title_Code': 'UPHIN51328', 'Title_Name': 'SWARAJ JAGRAN'}
+id: 454083262670662752, distance: 1.0820112228393555, entity: {'Metaphone_Name': 'PRMNJKRN', 'Title_Code': 'RAJHIN12806', 'Title_Name': 'BRAHMAN JAGRAN'}
+id: 454083262670676332, distance: 1.082963466644287, entity: {'Metaphone_Name': 'ANTNNFKSNJ', 'Title_Code': 'WBENG04470', 'Title_Name': 'INDIAN INFO EXCHANGE'}
+id: 454083262670670106, distance: 1.0831785202026367, entity: {'Metaphone_Name': 'MHRJKNJTMS', 'Title_Code': 'UPHIN13457', 'Title_Name': 'MAHARAJAGANJ TIMES'}
+id: 454083262670673791, distance: 1.083238124847412, entity: {'Metaphone_Name': 'ANTNJRNLFKSNM', 'Title_Code': 'DELENG02968', 'Title_Name': 'INDIAN JOURNAL OF AGSONOMY'}
+id: 454083262670673893, distance: 1.083660364151001, entity: {'Metaphone_Name': 'ANTNJRNLFNTRLPRTKTSNTRSRSS', 'Title_Code': 'DELENG17634', 'Title_Name': 'INDIAN JOURNAL OF NATURAL PRODUCTS AND RESOURCES'}
+id: 454083262670662689, distance: 1.0839030742645264, entity: {'Metaphone_Name': 'JRKNTJKRN', 'Title_Code': 'JHAHIN00908', 'Title_Name': 'JHARKHAND JAGRAN'}
+id: 454083262670672806, distance: 1.0845603942871094, entity: {'Metaphone_Name': 'JJMNTNTLTT', 'Title_Code': 'UPHIN44357', 'Title_Name': 'JUDGEMENT AND LAW TODAY'}
+id: 454083262670673372, distance: 1.084794521331787, entity: {'Metaphone_Name': 'ANTNSTRLJKLJRNL', 'Title_Code': 'DELENG06831', 'Title_Name': 'INDIAN ASTROLOGICAL JOURNAL'}
+id: 454083262670673101, distance: 1.0852084159851074, entity: {'Metaphone_Name': 'ANTNJRNLFSSLJ', 'Title_Code': 'DELENG02860', 'Title_Name': 'INDIAN JOURNAL OF SOCIOLOGY'}
+id: 454083262670675529, distance: 1.0854839086532593, entity: {'Metaphone_Name': 'ALNTJJMNTS', 'Title_Code': 'TNENG05011', 'Title_Name': 'ALL INDIA JUDGEMENTS'}
+id: 454083262670674678, distance: 1.0864269733428955, entity: {'Metaphone_Name': 'ANTPLNNTJLRSPLTN', 'Title_Code': 'MAHBIL07224', 'Title_Name': 'INDIA BULLION AND JEWELLERS BULLETIN'}
+id: 454083262670675682, distance: 1.087672233581543, entity: {'Metaphone_Name': 'ANTNJRNLFPSKTR', 'Title_Code': 'TNENG03226', 'Title_Name': 'INDIAN JOURNAL OF PSYCHIATRY'}
+id: 454083262670676661, distance: 1.0895709991455078, entity: {'Metaphone_Name': 'JNS', 'Title_Code': 'GUJGUJ14929', 'Title_Name': 'JAN AAWAZ'}
+id: 454083262670676670, distance: 1.0895709991455078, entity: {'Metaphone_Name': 'JNS', 'Title_Code': 'GUJGUJ09462', 'Title_Name': 'JAN AAWAZ'}
+id: 454083262670665143, distance: 1.089925765991211, entity: {'Metaphone_Name': 'JNTKTMS', 'Title_Code': 'JKBIL00189', 'Title_Name': 'J AND K TIMES'}
+id: 454083262670676680, distance: 1.0901293754577637, entity: {'Metaphone_Name': 'KJRTNS', 'Title_Code': 'GUJGUJ13881', 'Title_Name': 'GUJARAT NO AWAZ'}
+id: 454083262670673146, distance: 1.0901529788970947, entity: {'Metaphone_Name': 'ANTNJRNLFKMPTRSNS', 'Title_Code': 'DELENG19396', 'Title_Name': 'INDIAN JOURNAL OF COMPUTER SCIENCE'}
+id: 454083262670662701, distance: 1.090871810913086, entity: {'Metaphone_Name': 'NNTJRMJKRN', 'Title_Code': 'MAHMAR52949', 'Title_Name': 'NANDIGIRAM JAGRAN'}
