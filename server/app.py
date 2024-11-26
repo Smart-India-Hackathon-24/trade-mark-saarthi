@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI,Query
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from pymilvus import Collection, connections, FieldSchema, CollectionSchema, DataType
@@ -12,6 +12,8 @@ from pydantic import BaseModel
 from sentence_transformers import SentenceTransformer
 from scipy.spatial.distance import cosine
 from metaphone import doublemetaphone
+import pandas as pd
+from fastapi.responses import FileResponse
 
 
 load_dotenv()
@@ -86,7 +88,7 @@ schema = CollectionSchema(
     description="Collection for title information with vector embeddings and phonetic codes."
 )
 
-collection_name = "Phonetic_Data"
+collection_name = "Simple_Embeddings"
 collection=''
 try:
     collection = Collection(name=collection_name)  
@@ -153,36 +155,10 @@ def calculate_similarity(query_vector, stored_vector):
 def get_metaphone(name):
     return doublemetaphone(name)[0]
 
-def parsed_result(raw_data):
-    print("I Came Here")
-    parsed_results = []
-    for item in raw_data:
-        print(item)
-        # with open("viren.txt","w",encoding="utf-8") as f:
-        #     f.write(item)
-        # Convert the string into a dictionary
-        parsed_item = {}
-        for field in item.split(", "):
-            key, value = field.split(": ", 1)
-            key = key.strip()
-            value = value.strip()
-            # Handle nested entity
-            if key == "entity":
-                parsed_item[key] = ast.literal_eval(value)
-            elif key == "distance":
-                parsed_item[key] = float(value)
-            elif key == "id":
-                parsed_item[key] = int(value)
-            else:
-                parsed_item[key] = value
-        parsed_results.append(parsed_item)
-        print("Now I am going")
-    return parsed_results
 
 @app.get("/trademark/querydata")
 async def get_query_data():
     try:
-        model = SentenceTransformer('all-MiniLM-L6-v2')
         query_metaphone = get_metaphone("SAMPURNA JAGRAN")
         query_vector = model.encode(query_metaphone).tolist()
         # vector_results = []
@@ -221,7 +197,6 @@ async def get_query_data():
         with open("viren1.txt", "w", encoding="utf-8") as f:
             f.write(results)
         print(results)
-        # output=parsed_result(results)
         print("viren111111111111111111111111111111111111111111111111111111111111111116")
         # with open("viren1.txt", "w+", encoding="utf-8") as f:
         #     f.write("123345")
@@ -239,11 +214,64 @@ async def get_query_data():
     except Exception as e:
         return {"error": str(e)}, 500  # Return error message
 
+@app.get("/trademark/getdataontitle")
+async def get_data_title(name: str = Query(..., description="The name to search for")):
+    try:
+        model = SentenceTransformer('all-MiniLM-L6-v2')
+        all_data=[]
+        # name="SAMPURNA JAGRAN"
+        query_metaphone = get_metaphone(name)
+        query_vector = model.encode(name).tolist()
+        iterator=collection.search_iterator(
+            data=[query_vector],
+            anns_field="vector",
+            param={"metric_type": "COSINE", "params": {"nprobe": 384,}},
+            limit=200,
+            # expr=f"Metaphone_Name=='{query_metaphone}'",
+            output_fields=["Title_Name","Metaphone_Name","Title_Code"]
+        )
+        results = []
+
+        while True:
+            result = iterator.next()
+            if not result:
+                iterator.close()
+                break
+            
+            for hit in result:
+                results.append(hit.to_dict())
+                
+        print(len(results))
+        for i in range(len(results)):
+            all_data.append({
+                "Title_Code":results[i]['entity']['Title_Code'],
+                "Title_Name":results[i]['entity']['Title_Name'],
+                "Metaphone_Name":results[i]['entity']['Metaphone_Name'],
+                "distance":results[i]['distance']
+            })
+        df=pd.DataFrame(all_data)
+        file_path = "results.csv"
+        df.to_csv(file_path, index=False)
+        return FileResponse(
+            path=file_path,
+            filename="results.csv",
+            media_type="text/csv"
+        )
+            
+    except Exception as e:
+        return {"error": str(e)}, 500
+    # finally:
+    #     # Ensure the temporary file is deleted after the response
+    #     if os.path.exists("results.csv"):
+    #         os.remove("results.csv")
+
+
+
 @app.get("/trademark/deleteAllData")
 def delete_all_data():
     try:
         global collection
-        collection.drop()
+        collection.delete(expr="Auto_id >= 0")
         
     except Exception as e:
         return {"error": str(e)}, 500 
@@ -270,19 +298,9 @@ async def insert_data(data:List[TrademarkData]):
         print("ERROR",e)
         return {"error": str(e)}, 500 
 
-@app.get("/health")
-async def health_check():
-    return {"status": "healthy"}
-
-
 @app.get("/")
-async def root():
-    try:
-        return {"message": "Welcome to the API"}
-    except Exception as e:
-        # Return proper FastAPI response with status code
-        return {"error": str(e)}, 500
-
+async def getApi():
+    return "Hello"
 
 if __name__ == "__main__":
     import uvicorn
