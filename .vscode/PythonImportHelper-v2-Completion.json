@@ -1,0 +1,336 @@
+[
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Query",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "CORSMiddleware",
+        "importPath": "fastapi.middleware.cors",
+        "description": "fastapi.middleware.cors",
+        "isExtraImport": true,
+        "detail": "fastapi.middleware.cors",
+        "documentation": {}
+    },
+    {
+        "label": "JSONResponse",
+        "importPath": "fastapi.responses",
+        "description": "fastapi.responses",
+        "isExtraImport": true,
+        "detail": "fastapi.responses",
+        "documentation": {}
+    },
+    {
+        "label": "FileResponse",
+        "importPath": "fastapi.responses",
+        "description": "fastapi.responses",
+        "isExtraImport": true,
+        "detail": "fastapi.responses",
+        "documentation": {}
+    },
+    {
+        "label": "Collection",
+        "importPath": "pymilvus",
+        "description": "pymilvus",
+        "isExtraImport": true,
+        "detail": "pymilvus",
+        "documentation": {}
+    },
+    {
+        "label": "connections",
+        "importPath": "pymilvus",
+        "description": "pymilvus",
+        "isExtraImport": true,
+        "detail": "pymilvus",
+        "documentation": {}
+    },
+    {
+        "label": "FieldSchema",
+        "importPath": "pymilvus",
+        "description": "pymilvus",
+        "isExtraImport": true,
+        "detail": "pymilvus",
+        "documentation": {}
+    },
+    {
+        "label": "CollectionSchema",
+        "importPath": "pymilvus",
+        "description": "pymilvus",
+        "isExtraImport": true,
+        "detail": "pymilvus",
+        "documentation": {}
+    },
+    {
+        "label": "DataType",
+        "importPath": "pymilvus",
+        "description": "pymilvus",
+        "isExtraImport": true,
+        "detail": "pymilvus",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "BeautifulSoup",
+        "importPath": "bs4",
+        "description": "bs4",
+        "isExtraImport": true,
+        "detail": "bs4",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "SentenceTransformer",
+        "importPath": "sentence_transformers",
+        "description": "sentence_transformers",
+        "isExtraImport": true,
+        "detail": "sentence_transformers",
+        "documentation": {}
+    },
+    {
+        "label": "cosine",
+        "importPath": "scipy.spatial.distance",
+        "description": "scipy.spatial.distance",
+        "isExtraImport": true,
+        "detail": "scipy.spatial.distance",
+        "documentation": {}
+    },
+    {
+        "label": "doublemetaphone",
+        "importPath": "metaphone",
+        "description": "metaphone",
+        "isExtraImport": true,
+        "detail": "metaphone",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "TrademarkData",
+        "kind": 6,
+        "importPath": "server.app",
+        "description": "server.app",
+        "peekOfCode": "class TrademarkData(BaseModel):\n    title_code: str\n    title_name: str\n    hindi_title: str\n    register_serial_no: str\n    regn_no: str\n    owner_name: str\n    state: str\n    publication_city_district: str\n    periodity: str",
+        "detail": "server.app",
+        "documentation": {}
+    },
+    {
+        "label": "extract_data",
+        "kind": 2,
+        "importPath": "server.app",
+        "description": "server.app",
+        "peekOfCode": "def extract_data():\n    with open('../dataset/final.html', 'r') as file:\n        soup = BeautifulSoup(file, 'html.parser')\n    data = []\n    table = soup.find('table')\n    for row in table.find_all('tr')[1:]: \n        cols = row.find_all('td')\n        if cols: \n            entry = {\n                \"title_code\": cols[0].get_text(strip=True),",
+        "detail": "server.app",
+        "documentation": {}
+    },
+    {
+        "label": "calculate_similarity",
+        "kind": 2,
+        "importPath": "server.app",
+        "description": "server.app",
+        "peekOfCode": "def calculate_similarity(query_vector, stored_vector):\n    return 1 - cosine(query_vector, stored_vector)\ndef get_metaphone(name):\n    return doublemetaphone(name)[0]\n@app.get(\"/trademark/querydata\")\nasync def get_query_data():\n    try:\n        query_metaphone = get_metaphone(\"SAMPURNA JAGRAN\")\n        query_vector = model.encode(query_metaphone).tolist()\n        # vector_results = []",
+        "detail": "server.app",
+        "documentation": {}
+    },
+    {
+        "label": "get_metaphone",
+        "kind": 2,
+        "importPath": "server.app",
+        "description": "server.app",
+        "peekOfCode": "def get_metaphone(name):\n    return doublemetaphone(name)[0]\n@app.get(\"/trademark/querydata\")\nasync def get_query_data():\n    try:\n        query_metaphone = get_metaphone(\"SAMPURNA JAGRAN\")\n        query_vector = model.encode(query_metaphone).tolist()\n        # vector_results = []\n        # output_fields = [field.name for field in collection.schema.fields]\n        # data = collection.query(expr=\"\",output_fields=output_fields,limit=5)",
+        "detail": "server.app",
+        "documentation": {}
+    },
+    {
+        "label": "delete_all_data",
+        "kind": 2,
+        "importPath": "server.app",
+        "description": "server.app",
+        "peekOfCode": "def delete_all_data():\n    try:\n        global collection\n        collection.delete(expr=\"Auto_id >= 0\")\n    except Exception as e:\n        return {\"error\": str(e)}, 500 \n@app.post(\"/trademark/add\")\nasync def insert_data(data:List[TrademarkData]):\n    try:\n        print(data)",
+        "detail": "server.app",
+        "documentation": {}
+    },
+    {
+        "label": "origins",
+        "kind": 5,
+        "importPath": "server.app",
+        "description": "server.app",
+        "peekOfCode": "origins = [\n    \"http://localhost:3000\",    # React default port\n    \"http://localhost:8080\",    # Common frontend port\n    # Add other allowed origins as needed\n]\napp = FastAPI()\n# Configure CORS with specific origins\napp.add_middleware(\n    CORSMiddleware,\n    allow_origins=origins,",
+        "detail": "server.app",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "server.app",
+        "description": "server.app",
+        "peekOfCode": "app = FastAPI()\n# Configure CORS with specific origins\napp.add_middleware(\n    CORSMiddleware,\n    allow_origins=origins,\n    allow_credentials=True,\n    allow_methods=[\"GET\", \"POST\", \"PUT\", \"DELETE\"],\n    allow_headers=[\"*\"],\n)\n# Define a Pydantic model for the data structure",
+        "detail": "server.app",
+        "documentation": {}
+    },
+    {
+        "label": "auto_id_field",
+        "kind": 5,
+        "importPath": "server.app",
+        "description": "server.app",
+        "peekOfCode": "auto_id_field = FieldSchema(name=\"Auto_id\", dtype=DataType.INT64, is_primary=True, auto_id=True)\nvector_field = FieldSchema(name=\"vector\", dtype=DataType.FLOAT_VECTOR, dim=384)\ntitle_code_field = FieldSchema(name=\"Title_Code\", dtype=DataType.VARCHAR, max_length=200)\ntitle_name_field = FieldSchema(name=\"Title_Name\", dtype=DataType.VARCHAR, max_length=200)\nsoundex_name_field = FieldSchema(name=\"Soundex_Name\", dtype=DataType.VARCHAR, max_length=200)\nmetaphone_name_field = FieldSchema(name=\"Metaphone_Name\", dtype=DataType.VARCHAR, max_length=200)\ndouble_metaphone_primary_field = FieldSchema(name=\"Double_Metaphone_Primary\", dtype=DataType.VARCHAR, max_length=200)\ndouble_metaphone_secondary_field = FieldSchema(name=\"Double_Metaphone_Secondary\", dtype=DataType.VARCHAR, max_length=200)\nnysiis_name_field = FieldSchema(name=\"NYSIIS_Name\", dtype=DataType.VARCHAR, max_length=200)\nschema = CollectionSchema(",
+        "detail": "server.app",
+        "documentation": {}
+    },
+    {
+        "label": "vector_field",
+        "kind": 5,
+        "importPath": "server.app",
+        "description": "server.app",
+        "peekOfCode": "vector_field = FieldSchema(name=\"vector\", dtype=DataType.FLOAT_VECTOR, dim=384)\ntitle_code_field = FieldSchema(name=\"Title_Code\", dtype=DataType.VARCHAR, max_length=200)\ntitle_name_field = FieldSchema(name=\"Title_Name\", dtype=DataType.VARCHAR, max_length=200)\nsoundex_name_field = FieldSchema(name=\"Soundex_Name\", dtype=DataType.VARCHAR, max_length=200)\nmetaphone_name_field = FieldSchema(name=\"Metaphone_Name\", dtype=DataType.VARCHAR, max_length=200)\ndouble_metaphone_primary_field = FieldSchema(name=\"Double_Metaphone_Primary\", dtype=DataType.VARCHAR, max_length=200)\ndouble_metaphone_secondary_field = FieldSchema(name=\"Double_Metaphone_Secondary\", dtype=DataType.VARCHAR, max_length=200)\nnysiis_name_field = FieldSchema(name=\"NYSIIS_Name\", dtype=DataType.VARCHAR, max_length=200)\nschema = CollectionSchema(\n    fields=[",
+        "detail": "server.app",
+        "documentation": {}
+    },
+    {
+        "label": "title_code_field",
+        "kind": 5,
+        "importPath": "server.app",
+        "description": "server.app",
+        "peekOfCode": "title_code_field = FieldSchema(name=\"Title_Code\", dtype=DataType.VARCHAR, max_length=200)\ntitle_name_field = FieldSchema(name=\"Title_Name\", dtype=DataType.VARCHAR, max_length=200)\nsoundex_name_field = FieldSchema(name=\"Soundex_Name\", dtype=DataType.VARCHAR, max_length=200)\nmetaphone_name_field = FieldSchema(name=\"Metaphone_Name\", dtype=DataType.VARCHAR, max_length=200)\ndouble_metaphone_primary_field = FieldSchema(name=\"Double_Metaphone_Primary\", dtype=DataType.VARCHAR, max_length=200)\ndouble_metaphone_secondary_field = FieldSchema(name=\"Double_Metaphone_Secondary\", dtype=DataType.VARCHAR, max_length=200)\nnysiis_name_field = FieldSchema(name=\"NYSIIS_Name\", dtype=DataType.VARCHAR, max_length=200)\nschema = CollectionSchema(\n    fields=[\n        auto_id_field,",
+        "detail": "server.app",
+        "documentation": {}
+    },
+    {
+        "label": "title_name_field",
+        "kind": 5,
+        "importPath": "server.app",
+        "description": "server.app",
+        "peekOfCode": "title_name_field = FieldSchema(name=\"Title_Name\", dtype=DataType.VARCHAR, max_length=200)\nsoundex_name_field = FieldSchema(name=\"Soundex_Name\", dtype=DataType.VARCHAR, max_length=200)\nmetaphone_name_field = FieldSchema(name=\"Metaphone_Name\", dtype=DataType.VARCHAR, max_length=200)\ndouble_metaphone_primary_field = FieldSchema(name=\"Double_Metaphone_Primary\", dtype=DataType.VARCHAR, max_length=200)\ndouble_metaphone_secondary_field = FieldSchema(name=\"Double_Metaphone_Secondary\", dtype=DataType.VARCHAR, max_length=200)\nnysiis_name_field = FieldSchema(name=\"NYSIIS_Name\", dtype=DataType.VARCHAR, max_length=200)\nschema = CollectionSchema(\n    fields=[\n        auto_id_field,\n        vector_field,",
+        "detail": "server.app",
+        "documentation": {}
+    },
+    {
+        "label": "soundex_name_field",
+        "kind": 5,
+        "importPath": "server.app",
+        "description": "server.app",
+        "peekOfCode": "soundex_name_field = FieldSchema(name=\"Soundex_Name\", dtype=DataType.VARCHAR, max_length=200)\nmetaphone_name_field = FieldSchema(name=\"Metaphone_Name\", dtype=DataType.VARCHAR, max_length=200)\ndouble_metaphone_primary_field = FieldSchema(name=\"Double_Metaphone_Primary\", dtype=DataType.VARCHAR, max_length=200)\ndouble_metaphone_secondary_field = FieldSchema(name=\"Double_Metaphone_Secondary\", dtype=DataType.VARCHAR, max_length=200)\nnysiis_name_field = FieldSchema(name=\"NYSIIS_Name\", dtype=DataType.VARCHAR, max_length=200)\nschema = CollectionSchema(\n    fields=[\n        auto_id_field,\n        vector_field,\n        title_code_field,",
+        "detail": "server.app",
+        "documentation": {}
+    },
+    {
+        "label": "metaphone_name_field",
+        "kind": 5,
+        "importPath": "server.app",
+        "description": "server.app",
+        "peekOfCode": "metaphone_name_field = FieldSchema(name=\"Metaphone_Name\", dtype=DataType.VARCHAR, max_length=200)\ndouble_metaphone_primary_field = FieldSchema(name=\"Double_Metaphone_Primary\", dtype=DataType.VARCHAR, max_length=200)\ndouble_metaphone_secondary_field = FieldSchema(name=\"Double_Metaphone_Secondary\", dtype=DataType.VARCHAR, max_length=200)\nnysiis_name_field = FieldSchema(name=\"NYSIIS_Name\", dtype=DataType.VARCHAR, max_length=200)\nschema = CollectionSchema(\n    fields=[\n        auto_id_field,\n        vector_field,\n        title_code_field,\n        title_name_field,",
+        "detail": "server.app",
+        "documentation": {}
+    },
+    {
+        "label": "double_metaphone_primary_field",
+        "kind": 5,
+        "importPath": "server.app",
+        "description": "server.app",
+        "peekOfCode": "double_metaphone_primary_field = FieldSchema(name=\"Double_Metaphone_Primary\", dtype=DataType.VARCHAR, max_length=200)\ndouble_metaphone_secondary_field = FieldSchema(name=\"Double_Metaphone_Secondary\", dtype=DataType.VARCHAR, max_length=200)\nnysiis_name_field = FieldSchema(name=\"NYSIIS_Name\", dtype=DataType.VARCHAR, max_length=200)\nschema = CollectionSchema(\n    fields=[\n        auto_id_field,\n        vector_field,\n        title_code_field,\n        title_name_field,\n        soundex_name_field,",
+        "detail": "server.app",
+        "documentation": {}
+    },
+    {
+        "label": "double_metaphone_secondary_field",
+        "kind": 5,
+        "importPath": "server.app",
+        "description": "server.app",
+        "peekOfCode": "double_metaphone_secondary_field = FieldSchema(name=\"Double_Metaphone_Secondary\", dtype=DataType.VARCHAR, max_length=200)\nnysiis_name_field = FieldSchema(name=\"NYSIIS_Name\", dtype=DataType.VARCHAR, max_length=200)\nschema = CollectionSchema(\n    fields=[\n        auto_id_field,\n        vector_field,\n        title_code_field,\n        title_name_field,\n        soundex_name_field,\n        metaphone_name_field,",
+        "detail": "server.app",
+        "documentation": {}
+    },
+    {
+        "label": "nysiis_name_field",
+        "kind": 5,
+        "importPath": "server.app",
+        "description": "server.app",
+        "peekOfCode": "nysiis_name_field = FieldSchema(name=\"NYSIIS_Name\", dtype=DataType.VARCHAR, max_length=200)\nschema = CollectionSchema(\n    fields=[\n        auto_id_field,\n        vector_field,\n        title_code_field,\n        title_name_field,\n        soundex_name_field,\n        metaphone_name_field,\n        double_metaphone_primary_field,",
+        "detail": "server.app",
+        "documentation": {}
+    },
+    {
+        "label": "schema",
+        "kind": 5,
+        "importPath": "server.app",
+        "description": "server.app",
+        "peekOfCode": "schema = CollectionSchema(\n    fields=[\n        auto_id_field,\n        vector_field,\n        title_code_field,\n        title_name_field,\n        soundex_name_field,\n        metaphone_name_field,\n        double_metaphone_primary_field,\n        double_metaphone_secondary_field,",
+        "detail": "server.app",
+        "documentation": {}
+    },
+    {
+        "label": "collection_name",
+        "kind": 5,
+        "importPath": "server.app",
+        "description": "server.app",
+        "peekOfCode": "collection_name = \"Simple_Embeddings\"\ncollection=''\ntry:\n    collection = Collection(name=collection_name)  \n    collection.load()\n    print(\"Collection exists.\")\nexcept Exception as e:\n    collection = Collection(name=collection_name, schema=schema) \n    print(\"Collection created.\")\nif connections.has_connection(\"default\"):",
+        "detail": "server.app",
+        "documentation": {}
+    }
+]
