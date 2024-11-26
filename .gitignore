@@ -3,3 +3,4 @@ __pycache__
 venv
 titles_data_withMVector.json
 /test/titles_data_withTitle.json
+.vscode
