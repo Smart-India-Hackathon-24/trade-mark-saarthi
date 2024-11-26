@@ -1,0 +1,200 @@
+id: 453901917307669115, distance: 0.9999986886978149, entity: {'Metaphone_Name': 'SMPRNJKRN', 'Title_Code': 'BIHHIN05150', 'Title_Name': 'SAMPURNA JAGRAN'}
+id: 453901917307669111, distance: 0.9999986886978149, entity: {'Metaphone_Name': 'SMPRNJKRN', 'Title_Code': 'BIHHIN05227', 'Title_Name': 'SAMPURNA JAGRAN'}
+id: 453901917307669116, distance: 0.9999986886978149, entity: {'Metaphone_Name': 'SMPRNJKRN', 'Title_Code': 'BIHHIN04876', 'Title_Name': 'SAMPURNA JAGRAN'}
+id: 453901917307669240, distance: 0.9999986886978149, entity: {'Metaphone_Name': 'SMPRNJKRN', 'Title_Code': 'SIKHIN00007', 'Title_Name': 'SAMPURNA JAGRAN'}
+id: 453901917307669176, distance: 0.8955761790275574, entity: {'Metaphone_Name': 'SMJTJKRN', 'Title_Code': 'MAHMAR18580', 'Title_Name': 'SAMAJWADI JAGRAN'}
+id: 453901917307669235, distance: 0.8032951354980469, entity: {'Metaphone_Name': 'PRMNJKRN', 'Title_Code': 'RAJHIN12806', 'Title_Name': 'BRAHMAN JAGRAN'}
+id: 453901917307669182, distance: 0.7925857901573181, entity: {'Metaphone_Name': 'PRFSJKRN', 'Title_Code': 'MAHHIN10392', 'Title_Name': 'PRAVASI JAGRAN'}
+id: 453901917307669272, distance: 0.7925328016281128, entity: {'Metaphone_Name': 'KSJKRN', 'Title_Code': 'UPHIN05847', 'Title_Name': 'KHAS JAGRAN'}
+id: 453901917307669278, distance: 0.7925328016281128, entity: {'Metaphone_Name': 'KSJKRN', 'Title_Code': 'UPHIN38553', 'Title_Name': 'KHAS JAGRAN'}
+id: 453901917307669305, distance: 0.7897883057594299, entity: {'Metaphone_Name': 'KNFNJKRN', 'Title_Code': 'UPBIL05145', 'Title_Name': 'GINVANI JAGRAN'}
+id: 453901917307669185, distance: 0.7871350049972534, entity: {'Metaphone_Name': 'PRKRJKRN', 'Title_Code': 'MAHHIN10329', 'Title_Name': 'PRAKHAR JAGRAN'}
+id: 453901917307669186, distance: 0.7871350049972534, entity: {'Metaphone_Name': 'PRKRJKRN', 'Title_Code': 'MAHMAR52850', 'Title_Name': 'PRAKHAR JAGRAN'}
+id: 453901917307669187, distance: 0.7851200699806213, entity: {'Metaphone_Name': 'AKPRPTJKRN', 'Title_Code': 'MAHHIN09384', 'Title_Name': 'YUG PRABHAT JAGRAN'}
+id: 453901917307669183, distance: 0.7847787737846375, entity: {'Metaphone_Name': 'SKJKRN', 'Title_Code': 'MAHBIL10173', 'Title_Name': 'SEWAK JAGRAN'}
+id: 453901917307669224, distance: 0.7793334722518921, entity: {'Metaphone_Name': 'JNJKRN', 'Title_Code': 'PUNPUN03786', 'Title_Name': 'JAN JAGRAN'}
+id: 453901917307669159, distance: 0.7793334722518921, entity: {'Metaphone_Name': 'JNJKRN', 'Title_Code': 'GUJGUJ15098', 'Title_Name': 'JAN JAGRAN'}
+id: 453901917307669123, distance: 0.7793334722518921, entity: {'Metaphone_Name': 'JNJKRN', 'Title_Code': 'DELPUN00627', 'Title_Name': 'JAN JAGRAN'}
+id: 453901917307669331, distance: 0.7793334722518921, entity: {'Metaphone_Name': 'JNJKRN', 'Title_Code': 'WBHIN00332', 'Title_Name': 'JAIN JAGRAN'}
+id: 453901917307669295, distance: 0.7786015868186951, entity: {'Metaphone_Name': 'PRTJKRN', 'Title_Code': 'UPHIN08884', 'Title_Name': 'PROD JAGRAN'}
+id: 453901917307669150, distance: 0.7786015868186951, entity: {'Metaphone_Name': 'PRTJKRN', 'Title_Code': 'DELHIN06063', 'Title_Name': 'BHARAT JAGRAN'}
+id: 453901917307681374, distance: 0.7754579782485962, entity: {'Metaphone_Name': 'SMRNTNS', 'Title_Code': 'MAHHIN09579', 'Title_Name': 'SUMMER INDIA NEWS'}
+id: 453901917307669285, distance: 0.7737167477607727, entity: {'Metaphone_Name': 'KNJKRN', 'Title_Code': 'UPHIN51237', 'Title_Name': 'GYAN JAGRAN'}
+id: 453901917307669196, distance: 0.7664657235145569, entity: {'Metaphone_Name': 'KRFJKRN', 'Title_Code': 'MPHIN12120', 'Title_Name': 'KAURAV JAGRAN'}
+id: 453901917307669193, distance: 0.7650946378707886, entity: {'Metaphone_Name': 'KRSKJKRN', 'Title_Code': 'MPHIN27979', 'Title_Name': 'KRISAK JAGRAN'}
+id: 453901917307669199, distance: 0.7650946378707886, entity: {'Metaphone_Name': 'KRSKJKRN', 'Title_Code': 'MPHIN18736', 'Title_Name': 'KRISAK JAGRAN'}
+id: 453901917307669296, distance: 0.7635719776153564, entity: {'Metaphone_Name': 'ATKJKRN', 'Title_Code': 'UPHIN49681', 'Title_Name': 'UDYOG JAGRAN'}
+id: 453901917307669126, distance: 0.7623708844184875, entity: {'Metaphone_Name': 'ATRKNTJKRN', 'Title_Code': 'DELHIN07073', 'Title_Name': 'UTTRAKHAND JAGRAN'}
+id: 453901917307669230, distance: 0.7616593837738037, entity: {'Metaphone_Name': 'FRPRTTTJKRN', 'Title_Code': 'RAJHIN07368', 'Title_Name': 'VIR BHARAT HADOTI JAGRAN'}
+id: 453901917307669118, distance: 0.7615838646888733, entity: {'Metaphone_Name': 'KXNJKRN', 'Title_Code': 'CHAHIN00427', 'Title_Name': 'KISHAN JAGRAN'}
+id: 453901917307669259, distance: 0.7614184617996216, entity: {'Metaphone_Name': 'KRNTJKRN', 'Title_Code': 'UPHIN33973', 'Title_Name': 'KRANTI JAGRAN'}
+id: 453901917307669134, distance: 0.7597640752792358, entity: {'Metaphone_Name': 'SHKRJKRN', 'Title_Code': 'DELMAL00135', 'Title_Name': 'SAHAKAR JAGRAN'}
+id: 453901917307669138, distance: 0.7597640752792358, entity: {'Metaphone_Name': 'SHKRJKRN', 'Title_Code': 'DELHIN29092', 'Title_Name': 'SAHAKAR JAGRAN'}
+id: 453901917307669139, distance: 0.7597640752792358, entity: {'Metaphone_Name': 'SHKRJKRN', 'Title_Code': 'DELBEN00173', 'Title_Name': 'SAHAKAR JAGRAN'}
+id: 453901917307669128, distance: 0.7597640752792358, entity: {'Metaphone_Name': 'SHKRJKRN', 'Title_Code': 'DELGUJ00092', 'Title_Name': 'SAHAKAR JAGRAN'}
+id: 453901917307669132, distance: 0.7597640752792358, entity: {'Metaphone_Name': 'SHKRJKRN', 'Title_Code': 'DELENG19922', 'Title_Name': 'SAHAKAR JAGRAN'}
+id: 453901917307669146, distance: 0.7597640752792358, entity: {'Metaphone_Name': 'SHKRJKRN', 'Title_Code': 'DELKAN00059', 'Title_Name': 'SAHAKAR JAGRAN'}
+id: 453901917307669131, distance: 0.7597640752792358, entity: {'Metaphone_Name': 'SHKRJKRN', 'Title_Code': 'DELTAM00107', 'Title_Name': 'SAHAKAR JAGRAN'}
+id: 453901917307669142, distance: 0.7597640752792358, entity: {'Metaphone_Name': 'SHKRJKRN', 'Title_Code': 'DELASS00026', 'Title_Name': 'SAHAKAR JAGRAN'}
+id: 453901917307669133, distance: 0.7597640752792358, entity: {'Metaphone_Name': 'SHKRJKRN', 'Title_Code': 'DELTEL00093', 'Title_Name': 'SAHAKAR JAGRAN'}
+id: 453901917307669143, distance: 0.7597640752792358, entity: {'Metaphone_Name': 'SHKRJKRN', 'Title_Code': 'DELPUN00650', 'Title_Name': 'SAHAKAR JAGRAN'}
+id: 453901917307669152, distance: 0.7597640752792358, entity: {'Metaphone_Name': 'SHKRJKRN', 'Title_Code': 'DELODI00069', 'Title_Name': 'SAHAKAR JAGRAN'}
+id: 453901917307669153, distance: 0.7597640752792358, entity: {'Metaphone_Name': 'SHKRJKRN', 'Title_Code': 'DELMAR00098', 'Title_Name': 'SAHAKAR JAGRAN'}
+id: 453901917307669188, distance: 0.7597110271453857, entity: {'Metaphone_Name': 'JNJNJKRN', 'Title_Code': 'MPHIN11121', 'Title_Name': 'JAN JAN JAGRAN'}
+id: 453901917307669269, distance: 0.7597110271453857, entity: {'Metaphone_Name': 'JNJNJKRN', 'Title_Code': 'UPHIN42727', 'Title_Name': 'JAN JAN JAGRAN'}
+id: 453901917307669206, distance: 0.7564780712127686, entity: {'Metaphone_Name': 'PLJKRN', 'Title_Code': 'MPHIN10818', 'Title_Name': 'PAL JAGRAN'}
+id: 453901917307669312, distance: 0.7560678720474243, entity: {'Metaphone_Name': 'RMPRJKRN', 'Title_Code': 'UPHIN09200', 'Title_Name': 'RAMPUR JAGRAN'}
+id: 453901917307669271, distance: 0.7552845478057861, entity: {'Metaphone_Name': 'TNKJKRN', 'Title_Code': 'UPHIN13545', 'Title_Name': 'DAINIK JAGRAN'}
+id: 453901917307669327, distance: 0.7552845478057861, entity: {'Metaphone_Name': 'TNKJKRN', 'Title_Code': 'UTTHIN03589', 'Title_Name': 'DAINIK JAGRAN'}
+id: 453901917307669330, distance: 0.7552845478057861, entity: {'Metaphone_Name': 'TNKJKRN', 'Title_Code': 'WBHIN01556', 'Title_Name': 'DAINIK JAGRAN'}
+id: 453901917307669117, distance: 0.7552845478057861, entity: {'Metaphone_Name': 'TNKJKRN', 'Title_Code': 'BIHHIN04420', 'Title_Name': 'DAINIK JAGRAN'}
+id: 453901917307669119, distance: 0.7552845478057861, entity: {'Metaphone_Name': 'TNKJKRN', 'Title_Code': 'CHAHIN00377', 'Title_Name': 'DAINIK JAGRAN'}
+id: 453901917307669114, distance: 0.7552845478057861, entity: {'Metaphone_Name': 'TNKJKRN', 'Title_Code': 'BIHHIN05109', 'Title_Name': 'DAINIK JAGRAN'}
+id: 453901917307669170, distance: 0.7552845478057861, entity: {'Metaphone_Name': 'TNKJKRN', 'Title_Code': 'JHAHIN00506', 'Title_Name': 'DAINIK JAGRAN'}
+id: 453901917307669222, distance: 0.7552845478057861, entity: {'Metaphone_Name': 'TNKJKRN', 'Title_Code': 'PUNHIN01349', 'Title_Name': 'DAINIK JAGRAN'}
+id: 453901917307669168, distance: 0.7552845478057861, entity: {'Metaphone_Name': 'TNKJKRN', 'Title_Code': 'JHAHIN00592', 'Title_Name': 'DAINIK JAGRAN'}
+id: 453901917307669203, distance: 0.7552845478057861, entity: {'Metaphone_Name': 'TNKJKRN', 'Title_Code': 'MPHIN20962', 'Title_Name': 'DAINIK JAGRAN'}
+id: 453901917307669212, distance: 0.7552845478057861, entity: {'Metaphone_Name': 'TNKJKRN', 'Title_Code': 'MPHIN01465', 'Title_Name': 'DAINIK JAGRAN'}
+id: 453901917307669197, distance: 0.7552845478057861, entity: {'Metaphone_Name': 'TNKJKRN', 'Title_Code': 'MPHIN14602', 'Title_Name': 'DAINIK JAGRAN'}
+id: 453901917307669227, distance: 0.7552845478057861, entity: {'Metaphone_Name': 'TNKJKRN', 'Title_Code': 'PUNHIN01567', 'Title_Name': 'DAINIK JAGRAN'}
+id: 453901917307669166, distance: 0.7552845478057861, entity: {'Metaphone_Name': 'TNKJKRN', 'Title_Code': 'HARHIN05890', 'Title_Name': 'DAINIK JAGRAN'}
+id: 453901917307669167, distance: 0.7552845478057861, entity: {'Metaphone_Name': 'TNKJKRN', 'Title_Code': 'HPHIN00634', 'Title_Name': 'DAINIK JAGRAN'}
+id: 453901917307669171, distance: 0.7552845478057861, entity: {'Metaphone_Name': 'TNKJKRN', 'Title_Code': 'JHAHIN00069', 'Title_Name': 'DAINIK JAGRAN'}
+id: 453901917307669121, distance: 0.7552845478057861, entity: {'Metaphone_Name': 'TNKJKRN', 'Title_Code': 'DELHIN01008', 'Title_Name': 'DAINIK JAGRAN'}
+id: 453901917307669163, distance: 0.7552845478057861, entity: {'Metaphone_Name': 'TNKJKRN', 'Title_Code': 'HARHIN04432', 'Title_Name': 'DAINIK JAGRAN'}
+id: 453901917307669219, distance: 0.7552845478057861, entity: {'Metaphone_Name': 'TNKJKRN', 'Title_Code': 'PUNHIN01568', 'Title_Name': 'DAINIK JAGRAN'}
+id: 453901917307669162, distance: 0.7552845478057861, entity: {'Metaphone_Name': 'TNKJKRN', 'Title_Code': 'HARHIN11033', 'Title_Name': 'DAINIK JAGRAN'}
+id: 453901917307669174, distance: 0.7552845478057861, entity: {'Metaphone_Name': 'TNKJKRN', 'Title_Code': 'JKHIN00247', 'Title_Name': 'DAINIK JAGRAN'}
+id: 453901917307669263, distance: 0.7552845478057861, entity: {'Metaphone_Name': 'TNKJKRN', 'Title_Code': 'UPHIN26566', 'Title_Name': 'DAINIK JAGRAN'}
+id: 453901917307669268, distance: 0.7552845478057861, entity: {'Metaphone_Name': 'TNKJKRN', 'Title_Code': 'UPHIN13783', 'Title_Name': 'DAINIK JAGRAN'}
+id: 453901917307669282, distance: 0.7552845478057861, entity: {'Metaphone_Name': 'TNKJKRN', 'Title_Code': 'UPHIN26572', 'Title_Name': 'DAINIK JAGRAN'}
+id: 453901917307669165, distance: 0.7552845478057861, entity: {'Metaphone_Name': 'TNKJKRN', 'Title_Code': 'HARHIN11096', 'Title_Name': 'DAINIK JAGRAN'}
+id: 453901917307669332, distance: 0.7552845478057861, entity: {'Metaphone_Name': 'TNKJKRN', 'Title_Code': 'WBHIN01591', 'Title_Name': 'DAINIK JAGRAN'}
+id: 453901917307669112, distance: 0.7552845478057861, entity: {'Metaphone_Name': 'TNKJKRN', 'Title_Code': 'BIHHIN05120', 'Title_Name': 'DAINIK JAGRAN'}
+id: 453901917307669218, distance: 0.7552845478057861, entity: {'Metaphone_Name': 'TNKJKRN', 'Title_Code': 'PUNHIN01501', 'Title_Name': 'DAINIK JAGRAN'}
+id: 453901917307669189, distance: 0.7552845478057861, entity: {'Metaphone_Name': 'TNKJKRN', 'Title_Code': 'MPHIN07284', 'Title_Name': 'DAINIK JAGRAN'}
+id: 453901917307669164, distance: 0.7552845478057861, entity: {'Metaphone_Name': 'TNKJKRN', 'Title_Code': 'HARHIN04620', 'Title_Name': 'DAINIK JAGRAN'}
+id: 453901917307669225, distance: 0.7552845478057861, entity: {'Metaphone_Name': 'TNKJKRN', 'Title_Code': 'PUNHIN01500', 'Title_Name': 'DAINIK JAGRAN'}
+id: 453901917307669125, distance: 0.7522591352462769, entity: {'Metaphone_Name': 'JNTJKRN', 'Title_Code': 'DELBIL05833', 'Title_Name': 'JANHIT JAGRAN'}
+id: 453901917307669238, distance: 0.7521281838417053, entity: {'Metaphone_Name': 'SJKRN', 'Title_Code': 'RAJHIN15032', 'Title_Name': 'SAI JAGRAN'}
+id: 453901917307669317, distance: 0.7519447803497314, entity: {'Metaphone_Name': 'NRJKRN', 'Title_Code': 'UPHIN41035', 'Title_Name': 'NARI JAGRAN'}
+id: 453901917307669280, distance: 0.7511181235313416, entity: {'Metaphone_Name': 'SNTJKRN', 'Title_Code': 'UPHIN38574', 'Title_Name': 'SANDHYA JAGRAN'}
+id: 453901917307669288, distance: 0.7509541511535645, entity: {'Metaphone_Name': 'SPMNJKRN', 'Title_Code': 'UPHIN50202', 'Title_Name': 'SWABHIMAN JAGRAN'}
+id: 453901917307669326, distance: 0.7492040991783142, entity: {'Metaphone_Name': 'JNXTNJKRN', 'Title_Code': 'UTTHIN05350', 'Title_Name': 'JAN CHETNA JAGRAN'}
+id: 453901917307669205, distance: 0.7481876611709595, entity: {'Metaphone_Name': 'KSMJKRN', 'Title_Code': 'MPHIN19798', 'Title_Name': 'GOSWAMI JAGRAN'}
+id: 453901917307669204, distance: 0.7474822998046875, entity: {'Metaphone_Name': 'KTKJKRN', 'Title_Code': 'MPHIN17090', 'Title_Name': 'KHATIK JAGRAN'}
+id: 453901917307669237, distance: 0.7473159432411194, entity: {'Metaphone_Name': 'JNJKRNPN', 'Title_Code': 'RAJHIN09487', 'Title_Name': 'JAIN JAGRAN ABHIYAN'}
+id: 453901917307669291, distance: 0.7461960911750793, entity: {'Metaphone_Name': 'ATJKRN', 'Title_Code': 'UPHIN47436', 'Title_Name': 'AWADH JAGRAN'}
+id: 453901917307669299, distance: 0.7461960911750793, entity: {'Metaphone_Name': 'ATJKRN', 'Title_Code': 'UPHIN48466', 'Title_Name': 'AWADH JAGRAN'}
+id: 453901917307669178, distance: 0.7460023760795593, entity: {'Metaphone_Name': 'MHJKRN', 'Title_Code': 'MAHBIL10310', 'Title_Name': 'MAHAJAGRAN'}
+id: 453901917307669322, distance: 0.7457159757614136, entity: {'Metaphone_Name': 'JNJKRNSMKR', 'Title_Code': 'UTTHIN05712', 'Title_Name': 'JANJAGRAN SAMACHAR'}
+id: 453901917307669290, distance: 0.7449532747268677, entity: {'Metaphone_Name': 'SRNXJKRN', 'Title_Code': 'UPHIN50457', 'Title_Name': 'SARANSH JAGRAN'}
+id: 453901917307682237, distance: 0.74381422996521, entity: {'Metaphone_Name': 'SMRNT', 'Title_Code': 'UPHIN48348', 'Title_Name': 'SAMAR INDIA'}
+id: 453901917307682238, distance: 0.74381422996521, entity: {'Metaphone_Name': 'SMRNT', 'Title_Code': 'UPHIN45242', 'Title_Name': 'SAMAR INDIA'}
+id: 453901917307669223, distance: 0.7429485321044922, entity: {'Metaphone_Name': 'PNJPJKRN', 'Title_Code': 'PUNPUN03799', 'Title_Name': 'PUNJABI JAGRAN'}
+id: 453901917307683152, distance: 0.7427403330802917, entity: {'Metaphone_Name': 'SMJKS', 'Title_Code': 'GUJGUJ15084', 'Title_Name': 'SAMAJIK AWAZ'}
+id: 453901917307669323, distance: 0.7424147725105286, entity: {'Metaphone_Name': 'SRJKRN', 'Title_Code': 'UTTHIN01631', 'Title_Name': 'SURYA JAGRAN'}
+id: 453901917307669266, distance: 0.7424147725105286, entity: {'Metaphone_Name': 'SRJKRN', 'Title_Code': 'UPHIN14758', 'Title_Name': 'SURYA JAGRAN'}
+id: 453901917307669220, distance: 0.7390093803405762, entity: {'Metaphone_Name': 'AKJJKRN', 'Title_Code': 'PUNPUN04291', 'Title_Name': 'AAGAJ JAGRAN'}
+id: 453901917307669264, distance: 0.7389127016067505, entity: {'Metaphone_Name': 'JLNJKRN', 'Title_Code': 'UPHIN04961', 'Title_Name': 'JALAUN JAGRAN'}
+id: 453901917307669270, distance: 0.7384798526763916, entity: {'Metaphone_Name': 'JKTRHKJKRN', 'Title_Code': 'UPHIN20717', 'Title_Name': 'JAGTA RAHEGA JAGRAN'}
+id: 453901917307669250, distance: 0.7382513284683228, entity: {'Metaphone_Name': 'STPJKRN', 'Title_Code': 'UPHIN50112', 'Title_Name': 'SWADEEP JAGRAN'}
+id: 453901917307669179, distance: 0.738118588924408, entity: {'Metaphone_Name': 'PHJNJKRN', 'Title_Code': 'MAHBIL05860', 'Title_Name': 'BAHUJAN JAGRAN'}
+id: 453901917307680135, distance: 0.736948549747467, entity: {'Metaphone_Name': 'SMPRKNT', 'Title_Code': 'DELHIN12512', 'Title_Name': 'SAMPARK INDIA'}
+id: 453901917307669324, distance: 0.7352825403213501, entity: {'Metaphone_Name': 'ATRKNTJNJKRN', 'Title_Code': 'UTTHIN02719', 'Title_Name': 'UTTRAKHAND JANJAGRAN'}
+id: 453901917307669207, distance: 0.7351455092430115, entity: {'Metaphone_Name': 'LKJKRN', 'Title_Code': 'MPMAR00015', 'Title_Name': 'LOK JAGRAN'}
+id: 453901917307669201, distance: 0.7341101765632629, entity: {'Metaphone_Name': 'PRTXJKRN', 'Title_Code': 'MPHIN36680', 'Title_Name': 'PRADESH JAGRAN'}
+id: 453901917307669257, distance: 0.7340470552444458, entity: {'Metaphone_Name': 'JNXKTJKRN', 'Title_Code': 'UPHIN41953', 'Title_Name': 'JAN SHAKTI JAGRAN'}
+id: 453901917307669200, distance: 0.7306820154190063, entity: {'Metaphone_Name': 'PLMKJKRN', 'Title_Code': 'MPHIN32233', 'Title_Name': 'BALMIK JAGRAN'}
+id: 453901917307669245, distance: 0.7293182015419006, entity: {'Metaphone_Name': 'JTJKRN', 'Title_Code': 'UPHIN05173', 'Title_Name': 'JYOTI JAGRAN'}
+id: 453901917307669145, distance: 0.7293182015419006, entity: {'Metaphone_Name': 'JTJKRN', 'Title_Code': 'DELBIL11566', 'Title_Name': 'JAT JAGRAN'}
+id: 453901917307669281, distance: 0.7288687825202942, entity: {'Metaphone_Name': 'SRJJKRN', 'Title_Code': 'UPHIN51328', 'Title_Name': 'SWARAJ JAGRAN'}
+id: 453901917307669304, distance: 0.7274127006530762, entity: {'Metaphone_Name': 'MHLJKRN', 'Title_Code': 'UPHIN14172', 'Title_Name': 'MAHILA JAGRAN'}
+id: 453901917307669184, distance: 0.7249252200126648, entity: {'Metaphone_Name': 'NNTJRMJKRN', 'Title_Code': 'MAHMAR52949', 'Title_Name': 'NANDIGIRAM JAGRAN'}
+id: 453901917307669211, distance: 0.7248510718345642, entity: {'Metaphone_Name': 'RSTRJKRN', 'Title_Code': 'MPHIN14806', 'Title_Name': 'RASTRA JAGRAN'}
+id: 453901917307669313, distance: 0.7245376110076904, entity: {'Metaphone_Name': 'FTKJKRN', 'Title_Code': 'UPHIN44593', 'Title_Name': 'VAIDIK JAGRAN'}
+id: 453901917307669328, distance: 0.7235561609268188, entity: {'Metaphone_Name': 'STTJKRN', 'Title_Code': 'UTTHIN05410', 'Title_Name': 'SATAT JAGRAN'}
+id: 453901917307669321, distance: 0.7234958410263062, entity: {'Metaphone_Name': 'HMLJKRN', 'Title_Code': 'UTTHIN00913', 'Title_Name': 'HIMALAYA JAGRAN'}
+id: 453901917307669232, distance: 0.7227321863174438, entity: {'Metaphone_Name': 'ATMKPNJKRN', 'Title_Code': 'RAJHIN10624', 'Title_Name': 'ADHIMAIK PUNJAGRAN'}
+id: 453901917307669265, distance: 0.7223072052001953, entity: {'Metaphone_Name': 'MRNNKJKRNSMKR', 'Title_Code': 'UPHIN49761', 'Title_Name': 'MORNING JAGRAN SAMACHAR'}
+id: 453901917307669195, distance: 0.7196417450904846, entity: {'Metaphone_Name': 'FNTJKRN', 'Title_Code': 'MPHIN37153', 'Title_Name': 'VANDE JAGRAN'}
+id: 453901917307669160, distance: 0.7192847728729248, entity: {'Metaphone_Name': 'KLXJKRN', 'Title_Code': 'HARHIN11294', 'Title_Name': 'KALASH JAGRAN'}
+id: 453901917307669161, distance: 0.7192847728729248, entity: {'Metaphone_Name': 'KLXJKRN', 'Title_Code': 'HARHIN05786', 'Title_Name': 'KALASH JAGRAN'}
+id: 453901917307669303, distance: 0.7178146243095398, entity: {'Metaphone_Name': 'LKNJNTJKRN', 'Title_Code': 'UPHIN28934', 'Title_Name': 'LUCKNOW JANHIT JAGRAN'}
+id: 453901917307669286, distance: 0.7178146243095398, entity: {'Metaphone_Name': 'LKNJNTJKRN', 'Title_Code': 'UPHIN51047', 'Title_Name': 'LUCKNOW JANHIT JAGRAN'}
+id: 453901917307669294, distance: 0.7178146243095398, entity: {'Metaphone_Name': 'LKNJNTJKRN', 'Title_Code': 'UPHIN51300', 'Title_Name': 'LUCKNOW JANHIT JAGRAN'}
+id: 453901917307669234, distance: 0.7174324989318848, entity: {'Metaphone_Name': 'MR0RJKRN', 'Title_Code': 'RAJHIN13652', 'Title_Name': 'MARUTHAR JAGRAN'}
+id: 453901917307669243, distance: 0.7165110111236572, entity: {'Metaphone_Name': 'JSLJNJKRN', 'Title_Code': 'UPHIN41436', 'Title_Name': 'JAISWAL JAIN JAGRAN'}
+id: 453901917307669260, distance: 0.7161543369293213, entity: {'Metaphone_Name': 'KTMPJKRN', 'Title_Code': 'UPHIN49748', 'Title_Name': 'KUTUMB JAGRAN'}
+id: 453901917307669228, distance: 0.7151261568069458, entity: {'Metaphone_Name': 'AMRJKRN', 'Title_Code': 'RAJHIN07775', 'Title_Name': 'AJMER JAGRAN'}
+id: 453901917307669262, distance: 0.7147350907325745, entity: {'Metaphone_Name': 'STNTRJKRN', 'Title_Code': 'UPHIN27349', 'Title_Name': 'SWATANTRA JAGRAN'}
+id: 453901917307669157, distance: 0.7131569981575012, entity: {'Metaphone_Name': 'JNJKRNNTLN', 'Title_Code': 'DELHIN07792', 'Title_Name': 'JAN JAGRAN AANDOLAN'}
+id: 453901917307669154, distance: 0.7110141515731812, entity: {'Metaphone_Name': 'KRJRJKRN', 'Title_Code': 'DELHIN28867', 'Title_Name': 'GURJAR JAGRAN'}
+id: 453901917307669233, distance: 0.7105441689491272, entity: {'Metaphone_Name': 'XTNJKRN', 'Title_Code': 'RAJHIN15260', 'Title_Name': 'CHAITANYA JAGRAN'}
+id: 453901917307669267, distance: 0.7079575657844543, entity: {'Metaphone_Name': 'JNPRJKRN', 'Title_Code': 'UPHIN05010', 'Title_Name': 'JAUNPUR JAGRAN'}
+id: 453901917307669301, distance: 0.7061549425125122, entity: {'Metaphone_Name': 'SPRPTJKRN', 'Title_Code': 'UPHIN33422', 'Title_Name': 'SUPRABHAT JAGRAN'}
+id: 453901917307669279, distance: 0.7061549425125122, entity: {'Metaphone_Name': 'SPRPTJKRN', 'Title_Code': 'UPHIN45776', 'Title_Name': 'SUPRABHAT JAGRAN'}
+id: 453901917307669144, distance: 0.7058340311050415, entity: {'Metaphone_Name': 'KRXJKRN', 'Title_Code': 'DELBEN00166', 'Title_Name': 'KRISHI JAGRAN'}
+id: 453901917307669141, distance: 0.7058340311050415, entity: {'Metaphone_Name': 'KRXJKRN', 'Title_Code': 'DELMAR00081', 'Title_Name': 'KRISHI JAGRAN'}
+id: 453901917307669137, distance: 0.7058340311050415, entity: {'Metaphone_Name': 'KRXJKRN', 'Title_Code': 'DELGUJ00077', 'Title_Name': 'KRISHI JAGRAN'}
+id: 453901917307669148, distance: 0.7058340311050415, entity: {'Metaphone_Name': 'KRXJKRN', 'Title_Code': 'DELTEL00085', 'Title_Name': 'KRISHI JAGRAN'}
+id: 453901917307669151, distance: 0.7058340311050415, entity: {'Metaphone_Name': 'KRXJKRN', 'Title_Code': 'DELASS00022', 'Title_Name': 'KRISHI JAGRAN'}
+id: 453901917307669149, distance: 0.7058340311050415, entity: {'Metaphone_Name': 'KRXJKRN', 'Title_Code': 'DELMAL00132', 'Title_Name': 'KRISHI JAGRAN'}
+id: 453901917307669129, distance: 0.7058340311050415, entity: {'Metaphone_Name': 'KRXJKRN', 'Title_Code': 'DELODI00065', 'Title_Name': 'KRISHI JAGRAN'}
+id: 453901917307669130, distance: 0.7058340311050415, entity: {'Metaphone_Name': 'KRXJKRN', 'Title_Code': 'DELKAN00054', 'Title_Name': 'KRISHI JAGRAN'}
+id: 453901917307669136, distance: 0.7058340311050415, entity: {'Metaphone_Name': 'KRXJKRN', 'Title_Code': 'DELTAM00104', 'Title_Name': 'KRISHI JAGRAN'}
+id: 453901917307669135, distance: 0.7045614719390869, entity: {'Metaphone_Name': 'MKKRXJKRN', 'Title_Code': 'DELPUN00503', 'Title_Name': 'M.A.C. KRISHI JAGRAN'}
+id: 453901917307669147, distance: 0.7045614719390869, entity: {'Metaphone_Name': 'MKKRXJKRN', 'Title_Code': 'DELHIN08097', 'Title_Name': 'M.A.C. KRISHI JAGRAN'}
+id: 453901917307669192, distance: 0.7033865451812744, entity: {'Metaphone_Name': 'MNFJKRN', 'Title_Code': 'MPHIN38371', 'Title_Name': 'MANAV JAGRAN'}
+id: 453901917307682582, distance: 0.7030041217803955, entity: {'Metaphone_Name': 'SMNJSNT', 'Title_Code': 'UPHIN45165', 'Title_Name': 'SAMANJASYA INDIA'}
+id: 453901917307682698, distance: 0.701815128326416, entity: {'Metaphone_Name': 'SMKNT', 'Title_Code': 'UPHIN32087', 'Title_Name': 'SAMYIK INDIA'}
+id: 453901917307669202, distance: 0.7006375789642334, entity: {'Metaphone_Name': 'ATMJKRN', 'Title_Code': 'MPBIL02575', 'Title_Name': 'AATM JAGRAN'}
+id: 453901917307669239, distance: 0.6999189257621765, entity: {'Metaphone_Name': 'ATXJKRN', 'Title_Code': 'RAJHIN27860', 'Title_Name': 'AUDICHYA JAGRAN'}
+id: 453901917307669226, distance: 0.6991938352584839, entity: {'Metaphone_Name': 'A0JKRN', 'Title_Code': 'PUNPUN04002', 'Title_Name': 'YOUTH JAGRAN'}
+id: 453901917307669124, distance: 0.6988211274147034, entity: {'Metaphone_Name': 'FTJKRN', 'Title_Code': 'DELBIL05402', 'Title_Name': 'VIDYA JAGRAN'}
+id: 453901917307669213, distance: 0.6988211274147034, entity: {'Metaphone_Name': 'FTJKRN', 'Title_Code': 'MPBIL02552', 'Title_Name': 'VIDHHYA JAGRAN'}
+id: 453901917307669258, distance: 0.6986847519874573, entity: {'Metaphone_Name': 'LTJKRN', 'Title_Code': 'UPHIN06410', 'Title_Name': 'LODHI JAGRAN'}
+id: 453901917307670123, distance: 0.698415219783783, entity: {'Metaphone_Name': 'SMRNTMS', 'Title_Code': 'DELHIN10869', 'Title_Name': 'SIMRAN TIMES'}
+id: 453901917307669310, distance: 0.6968607306480408, entity: {'Metaphone_Name': 'SRXTJKRN', 'Title_Code': 'UPHIN40475', 'Title_Name': 'SRISHTI JAGRAN'}
+id: 453901917307669172, distance: 0.6959274411201477, entity: {'Metaphone_Name': 'JRKNTJKRN', 'Title_Code': 'JHAHIN00908', 'Title_Name': 'JHARKHAND JAGRAN'}
+id: 453901917307669198, distance: 0.6957035064697266, entity: {'Metaphone_Name': 'XSTJKRN', 'Title_Code': 'MPHIN08902', 'Title_Name': 'SHOSIT JAGRAN'}
+id: 453901917307669293, distance: 0.6939001679420471, entity: {'Metaphone_Name': 'PLKXTRJKRN', 'Title_Code': 'UPHIN08047', 'Title_Name': 'PAL KSHATRIYA JAGRAN'}
+id: 453901917307669177, distance: 0.6919837594032288, entity: {'Metaphone_Name': 'FFSJKRN', 'Title_Code': 'MAHMAR27296', 'Title_Name': 'VYAVSAI JAGRAN'}
+id: 453901917307682525, distance: 0.6916174292564392, entity: {'Metaphone_Name': 'SMKRNT', 'Title_Code': 'UPHIN35849', 'Title_Name': 'SAMACHAR INDIA'}
+id: 453901917307669255, distance: 0.6878501772880554, entity: {'Metaphone_Name': 'LKXJKRN', 'Title_Code': 'UPHIN42918', 'Title_Name': 'LAKSHYA JAGRAN'}
+id: 453901917307679855, distance: 0.6784343123435974, entity: {'Metaphone_Name': 'ANTNSTRLJKLJRNL', 'Title_Code': 'DELENG06831', 'Title_Name': 'INDIAN ASTROLOGICAL JOURNAL'}
+id: 453901917307678068, distance: 0.6779299974441528, entity: {'Metaphone_Name': 'SMKRTT', 'Title_Code': 'GUJGUJ17331', 'Title_Name': 'SAMACHAR TODAY'}
+id: 453901917307678684, distance: 0.6779299974441528, entity: {'Metaphone_Name': 'SMKRTT', 'Title_Code': 'MPHIN33925', 'Title_Name': 'SAMAGRA TODAY'}
+id: 453901917307683568, distance: 0.6773608922958374, entity: {'Metaphone_Name': 'SMJTKS', 'Title_Code': 'RAJHIN26845', 'Title_Name': 'SAMAJWAD KI AWAZ'}
+id: 453901917307669254, distance: 0.6755552291870117, entity: {'Metaphone_Name': 'NFSRJKRN', 'Title_Code': 'UPBIL05192', 'Title_Name': 'NAVSWAR JAGRAN'}
+id: 453901917307669252, distance: 0.6742501854896545, entity: {'Metaphone_Name': 'ARFRTJKRN', 'Title_Code': 'UPHIN49536', 'Title_Name': 'ARYAVART JAGRAN'}
+id: 453901917307669273, distance: 0.6733074188232422, entity: {'Metaphone_Name': 'MNHRJKRN', 'Title_Code': 'UPHIN46248', 'Title_Name': 'MANOHAR JAGRAN'}
+id: 453901917307669302, distance: 0.6721388697624207, entity: {'Metaphone_Name': 'JNTJKRNJNSP', 'Title_Code': 'UPHIN48914', 'Title_Name': 'JANTA JAGRAN JANSABHA'}
+id: 453901917307680693, distance: 0.6721020340919495, entity: {'Metaphone_Name': 'JKNTJK', 'Title_Code': 'HARHIN11070', 'Title_Name': 'JAGO INDIA JAGO'}
+id: 453901917307669109, distance: 0.6703831553459167, entity: {'Metaphone_Name': 'JNJKRNTMS', 'Title_Code': 'NOFHIN00556', 'Title_Name': 'JAN JAGRAN TIMES'}
+id: 453901917307669261, distance: 0.6703831553459167, entity: {'Metaphone_Name': 'JNJKRNTMS', 'Title_Code': 'UPHIN20079', 'Title_Name': 'JAN JAGRAN TIMES'}
+id: 453901917307669256, distance: 0.6692636609077454, entity: {'Metaphone_Name': 'JNTJKRNXKT', 'Title_Code': 'UPHIN20546', 'Title_Name': 'JANTA JAGRAN SHAKTI'}
+id: 453901917307669249, distance: 0.669077455997467, entity: {'Metaphone_Name': 'APTJKRN', 'Title_Code': 'UPHIN49261', 'Title_Name': 'ABHYUDAYA JAGRAN'}
+id: 453901917307669194, distance: 0.6684726476669312, entity: {'Metaphone_Name': 'KRXJKRNSPTHK', 'Title_Code': 'MPHIN18323', 'Title_Name': 'KRISHI JAGRAN SAPTAHIK'}
+id: 453901917307679111, distance: 0.667839765548706, entity: {'Metaphone_Name': 'SMPRNTT', 'Title_Code': 'UPHIN48558', 'Title_Name': 'SAMPURAN TODAY'}
+id: 453901917307678725, distance: 0.667839765548706, entity: {'Metaphone_Name': 'SMPRNTT', 'Title_Code': 'MPHIN29424', 'Title_Name': 'SAMPURAN TODAY'}
+id: 453901917307679113, distance: 0.667839765548706, entity: {'Metaphone_Name': 'SMPRNTT', 'Title_Code': 'UPHIN48007', 'Title_Name': 'SAMPURAN TODAY'}
+id: 453901917307678377, distance: 0.667839765548706, entity: {'Metaphone_Name': 'SMPRNTT', 'Title_Code': 'MPHIN34429', 'Title_Name': 'SAMPURAN TODAY'}
+id: 453901917307669292, distance: 0.6674538254737854, entity: {'Metaphone_Name': 'AKJKRNTMS', 'Title_Code': 'UPHIN50917', 'Title_Name': 'YUG JAGRAN TIMES'}
+id: 453901917307669191, distance: 0.6667656302452087, entity: {'Metaphone_Name': 'PTRKRJKRN', 'Title_Code': 'MPHIN23511', 'Title_Name': 'PATRAKAR JAGRAN'}
+id: 453901917307680889, distance: 0.6625528931617737, entity: {'Metaphone_Name': 'SMRTKMPNNNT', 'Title_Code': 'KERENG02267', 'Title_Name': 'SMART COMPANION INDIA'}
+id: 453901917307669284, distance: 0.6625447273254395, entity: {'Metaphone_Name': 'FSNTRJKRN', 'Title_Code': 'UPHIN50663', 'Title_Name': 'VASUNDHARA JAGRAN'}
+id: 453901917307669297, distance: 0.6625447273254395, entity: {'Metaphone_Name': 'FSNTRJKRN', 'Title_Code': 'UPHIN51605', 'Title_Name': 'VASUNDHARA JAGRAN'}
+id: 453901917307683109, distance: 0.6584292054176331, entity: {'Metaphone_Name': 'ASSMJKPRNKKLF', 'Title_Code': 'DELHIN15591', 'Title_Name': 'AWAZ SAMAJ KI BURAIYON KE KHILAAF'}
+id: 453901917307669216, distance: 0.6581494212150574, entity: {'Metaphone_Name': 'FTXJKRN', 'Title_Code': 'MPHIN33793', 'Title_Name': 'VIDISHA JAGRAN'}
+id: 453901917307669231, distance: 0.6574757099151611, entity: {'Metaphone_Name': 'AMRJKRNSMRT', 'Title_Code': 'RAJHIN06232', 'Title_Name': 'AMARJAGRAN SAMRAT'}
+id: 453901917307669209, distance: 0.6513301134109497, entity: {'Metaphone_Name': 'JPLPRJKRN', 'Title_Code': 'MPHIN07422', 'Title_Name': 'JABALPUR JAGRAN'}
+id: 453901917307677656, distance: 0.6508503556251526, entity: {'Metaphone_Name': 'KRNTKJJMNTSTT', 'Title_Code': 'CHAENG00475', 'Title_Name': 'KARNATAKA JUDGEMENTS TODAY'}
+id: 453901917307682112, distance: 0.6489527821540833, entity: {'Metaphone_Name': '0NTNJKRFKLJRNL', 'Title_Code': 'TNENG05907', 'Title_Name': 'THE INDIAN GEOGRAPHICAL JOURNAL'}
+id: 453901917307669221, distance: 0.6456623673439026, entity: {'Metaphone_Name': 'ATPKJKRN', 'Title_Code': 'PUNMUL00717', 'Title_Name': 'ADHYAPAK JAGRAN'}
+id: 453901917307678047, distance: 0.645293116569519, entity: {'Metaphone_Name': 'SMN0TT', 'Title_Code': 'GUJGUJ14736', 'Title_Name': 'SOMNATH TODAY'}
+id: 453901917307677641, distance: 0.6434910297393799, entity: {'Metaphone_Name': 'RJKRNFTTT', 'Title_Code': 'BIHHIN04882', 'Title_Name': 'ROJGAAR NIVIDA TODAY'}
+id: 453901917307671724, distance: 0.6419605612754822, entity: {'Metaphone_Name': 'SMKTTMS', 'Title_Code': 'KARKAN28064', 'Title_Name': 'SAMYUKTA TIMES'}
+id: 453901917307680639, distance: 0.6375532150268555, entity: {'Metaphone_Name': 'SMFNT', 'Title_Code': 'GUJGUJ06936', 'Title_Name': 'SAMAY OF INDIA'}
+id: 453901917307683164, distance: 0.6370197534561157, entity: {'Metaphone_Name': 'SMN0KS', 'Title_Code': 'GUJGUJ17125', 'Title_Name': 'SOMNATH KI AAWAZ'}
+id: 453901917307683437, distance: 0.6338304877281189, entity: {'Metaphone_Name': 'PRJKS', 'Title_Code': 'MPHIN12797', 'Title_Name': 'PRAJA KI AWAZ'}

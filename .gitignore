@@ -1,3 +1,5 @@
-env
+.**/env
 __pycache__
-.vscode
+venv
+titles_data_withMVector.json
+/test/titles_data_withTitle.json
