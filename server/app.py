@@ -14,7 +14,7 @@ from scipy.spatial.distance import cosine
 from metaphone import doublemetaphone
 import pandas as pd
 from fastapi.responses import FileResponse
-import ast
+
 
 load_dotenv()
 
