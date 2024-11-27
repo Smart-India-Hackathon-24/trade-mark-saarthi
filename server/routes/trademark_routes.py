@@ -14,24 +14,29 @@ from database import get_collection
 router = APIRouter(prefix="/trademark", tags=["trademark"])
 model = SentenceTransformer("all-MiniLM-L6-v2")
 
+
 def get_metaphone(name):
     return doublemetaphone(name)[0]
 
+
 @router.get("/alldata")
-async def get_all_data():
+async def get_all_data(
+    limit: int = Query(200, description="Number of records to return")
+):
     try:
         collection = get_collection()
-        data = collection.query(expr="")
+        data = collection.query(expr="", limit=limit)
         return {"message": "data received successfully", "data": data}
     except Exception as e:
         return {"error": str(e)}, 500
+
 
 @router.get("/getdataontitle")
 async def get_data_title(name: str = Query(..., description="The name to search for")):
     try:
         collection = get_collection()
         query_vector = model.encode(name).tolist()
-        
+
         iterator = collection.search_iterator(
             data=[query_vector],
             anns_field="vector",
@@ -39,7 +44,7 @@ async def get_data_title(name: str = Query(..., description="The name to search 
             limit=200,
             output_fields=["Title_Name", "Metaphone_Name", "Title_Code"],
         )
-        
+
         results = []
         while True:
             result = iterator.next()
@@ -49,37 +54,44 @@ async def get_data_title(name: str = Query(..., description="The name to search 
             for hit in result:
                 results.append(hit.to_dict())
 
-        all_data = [{
-            "Title_Code": r["entity"]["Title_Code"],
-            "Title_Name": r["entity"]["Title_Name"],
-            "Metaphone_Name": r["entity"]["Metaphone_Name"],
-            "distance": r["distance"]
-        } for r in results]
+        all_data = [
+            {
+                "Title_Code": r["entity"]["Title_Code"],
+                "Title_Name": r["entity"]["Title_Name"],
+                "Metaphone_Name": r["entity"]["Metaphone_Name"],
+                "distance": r["distance"],
+            }
+            for r in results
+        ]
 
         df = pd.DataFrame(all_data)
         file_path = "results.csv"
         df.to_csv(file_path, index=False)
-        return FileResponse(path=file_path, filename="results.csv", media_type="text/csv")
+        return FileResponse(
+            path=file_path, filename="results.csv", media_type="text/csv"
+        )
 
     except Exception as e:
         return {"error": str(e)}, 500
+
 
 @router.post("/add")
 async def insert_data(data: List[TrademarkData]):
     try:
         if not data:
             return {"error": "No data provided"}, 400
-            
+
         collection = get_collection()
         for item in data:
             vector = [random.random() for _ in range(128)]
             item_dict = item.dict()
             item_dict["vector"] = vector
             collection.insert(item_dict)
-            
+
         return {"message": "Data inserted successfully"}
     except Exception as e:
         return {"error": str(e)}, 500
+
 
 @router.get("/deleteAllData")
 def delete_all_data():
@@ -88,4 +100,4 @@ def delete_all_data():
         collection.delete(expr="Auto_id >= 0")
         return {"message": "All data deleted successfully"}
     except Exception as e:
-        return {"error": str(e)}, 500 
+        return {"error": str(e)}, 500
