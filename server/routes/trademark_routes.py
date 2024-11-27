@@ -25,7 +25,8 @@ async def get_all_data(
 ):
     try:
         collection = get_collection()
-        data = collection.query(expr="", limit=limit)
+        print(collection)
+        data = collection.query(expr="", limit=limit, output_fields=["Title_Name", "Metaphone_Name", "Title_Code"])
         return {"message": "data received successfully", "data": data}
     except Exception as e:
         return {"error": str(e)}, 500
