@@ -14,6 +14,10 @@ from scipy.spatial.distance import cosine
 from metaphone import doublemetaphone
 import pandas as pd
 from fastapi.responses import FileResponse
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt
+from collections import Counter
+import numpy as np
 
 
 load_dotenv()
@@ -214,34 +218,63 @@ async def get_query_data():
     except Exception as e:
         return {"error": str(e)}, 500  # Return error message
 
+
+def wagner_fischer(s1, s2):
+    len_s1, len_s2 = len(s1), len(s2)
+    if len_s1 > len_s2:
+        s1, s2 = s2, s1
+        len_s1, len_s2 = len_s2, len_s1
+
+    current_row = range(len_s1 + 1)
+    for i in range(1, len_s2 + 1):
+        previous_row, current_row = current_row, [i] + [0] * len_s1
+        for j in range(1, len_s1 + 1):
+            add, delete, change = previous_row[j] + 1, current_row[j-1] + 1, previous_row[j-1]
+            if s1[j-1] != s2[i-1]:
+                change += 1
+            current_row[j] = min(add, delete, change)
+
+    return current_row[len_s1]
+
+def spell_check(word, dictionary):
+    suggestions = []
+
+    for correct_word in dictionary:
+        distance = wagner_fischer(word, correct_word)
+        suggestions.append((correct_word, distance))
+
+    suggestions.sort(key=lambda x: x[1])
+    return suggestions[:100]
+
+def generate_iterator(query_vector,param,limit,output_fields):
+    results=[]
+    iterator=collection.search_iterator(
+            data=[query_vector],
+            anns_field="vector",
+            param={"metric_type": "COSINE", "params": {"nprobe": 384,}},
+            limit=limit,
+            # expr=f"Metaphone_Name=='{query_metaphone}'",
+            output_fields=["Title_Name","Metaphone_Name","Title_Code"]
+        )
+    while True:
+        result = iterator.next()
+        if not result:
+            iterator.close()
+            break
+        for hit in result:
+            results.append(hit.to_dict())
+    return results
+
 @app.get("/trademark/getdataontitle")
 async def get_data_title(name: str = Query(..., description="The name to search for")):
     try:
         model = SentenceTransformer('all-MiniLM-L6-v2')
+        name=name.upper()
         all_data=[]
-        # name="SAMPURNA JAGRAN"
-        query_metaphone = get_metaphone(name)
+        # results = []
         query_vector = model.encode(name).tolist()
-        iterator=collection.search_iterator(
-            data=[query_vector],
-            anns_field="vector",
-            param={"metric_type": "COSINE", "params": {"nprobe": 384,}},
-            limit=200,
-            # expr=f"Metaphone_Name=='{query_metaphone}'",
-            output_fields=["Title_Name","Metaphone_Name","Title_Code"]
-        )
-        results = []
+        results=generate_iterator([query_vector],{"metric_type": "COSINE", "params": {"nprobe": 384,}},200,["Title_Name","Metaphone_Name","Title_Code"])
 
-        while True:
-            result = iterator.next()
-            if not result:
-                iterator.close()
-                break
-            
-            for hit in result:
-                results.append(hit.to_dict())
-                
-        print(len(results))
         for i in range(len(results)):
             all_data.append({
                 "Title_Code":results[i]['entity']['Title_Code'],
@@ -250,13 +283,17 @@ async def get_data_title(name: str = Query(..., description="The name to search 
                 "distance":results[i]['distance']
             })
         df=pd.DataFrame(all_data)
-        file_path = "results.csv"
-        df.to_csv(file_path, index=False)
-        return FileResponse(
-            path=file_path,
-            filename="results.csv",
-            media_type="text/csv"
-        )
+        suggestions = spell_check(name,df['Title_Name'])
+        print(f"Top 10 suggestions for '{name}':")
+        for word, distance in suggestions:
+            print(f"{word} (Distance: {distance})")
+        # file_path = "results.csv"
+        # df.to_csv(file_path, index=False)
+        # return FileResponse(
+        #     path=file_path,
+        #     filename="results.csv",
+        #     media_type="text/csv"
+        # )
             
     except Exception as e:
         return {"error": str(e)}, 500
@@ -265,7 +302,35 @@ async def get_data_title(name: str = Query(..., description="The name to search 
     #     if os.path.exists("results.csv"):
     #         os.remove("results.csv")
 
-
+@app.get("/trademark/wordcount")
+async def count_words():
+    try:
+       text2=""
+       iterator = collection.query_iterator(
+            expr="",
+            output_fields=["Title_Name"]
+        )
+       print(iterator)
+       results = []
+       while True:
+           result=iterator.next()
+           if not result:
+               iterator.close()
+               break
+           df=pd.DataFrame(result)
+           text2 += " ".join(title for title in df['Title_Name'])
+        #    print(text2)
+           results+=result
+       words = text2.split()
+       total = Counter(words)
+       title_name=np.array(list(total.keys()))
+       word_count = np.array(list(total.values()), dtype=np.int32)
+       count_df=pd.DataFrame({'Title_Name':title_name,'Word_Count':word_count})
+       count_df = count_df.sort_values(by="Word_Count", ascending=False).reset_index(drop=True)
+       
+    #    word_cloud2.to_file("word_cloud.png")
+    except Exception as e:
+        return {"error": str(e)}, 500
 
 @app.get("/trademark/deleteAllData")
 def delete_all_data():

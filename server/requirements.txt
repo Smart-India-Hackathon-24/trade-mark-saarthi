@@ -14,3 +14,4 @@ uvicorn==0.32.0
 pymilvus==2.4.9
 sentence_transformers==3.3.1
 metaphone==0.6
+wordcloud==1.9.4
