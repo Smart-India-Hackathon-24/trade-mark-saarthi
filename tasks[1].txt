@@ -21,7 +21,7 @@ Requirements:
         
         d. Calculate a similarity percentage for each title comparison. 
         
-    2. Prefix/Suffix Handling: /disallowedPrefix _>Parent API KHUSHIL
+    2. Prefix/Suffix Handling: /disallowedPrefix _>Parent API KHUSHIL ---------------- 1st step
         
         a. Maintain a list of disallowed prefixes and suffixes.  /
         
@@ -29,7 +29,7 @@ Requirements:
     
     3. Guideline Enforcement: 
     
-        a. Maintain a list of disallowed words (e.g., Police, Crime, Corruption, CBI, CID, Army). /disallowedPrefix/       KHUSHIL
+        a. Maintain a list of disallowed words (e.g., Police, Crime, Corruption, CBI, CID, Army). /disallowedPrefix/       KHUSHIL ----------1st step
         
         b. Ensure that titles containing these disallowed words are rejected. 
         

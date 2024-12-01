@@ -29,7 +29,7 @@ async def get_all_data(
     show_nysiis: bool = Query(False, description="Show NYSIIS Name")
 ):
     try:
-        collection = get_collection()
+        collection = get_collection("Phonetic_Data")
         
         # Title_Name and Title_Code are always included
         output_fields = ["Title_Name", "Title_Code"]
