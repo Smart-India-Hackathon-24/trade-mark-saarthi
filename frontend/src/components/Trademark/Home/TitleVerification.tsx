@@ -1,4 +1,5 @@
 "use client";
+import Loader from "@/components/Common/Loader";
 import ResultCard from "@/components/Common/ResultCard";
 import axios from "axios";
 import React, { useState } from 'react'
@@ -10,9 +11,36 @@ type TestCaseResult = {
   };
 const TitleVerification = () => {
     const [title, setTitle] = useState("");
-    const [results, setResults] = useState<{ testCase: string; result: string }[]>(
-      []
-    );
+    const [englishText, setEnglishText] = useState('');
+  const [translatedText, setTranslatedText] = useState('');
+  const [isVerified, setIsVerified] = useState(false);
+
+  // Simulate translation (Replace with actual API)
+  const translateText = async (text: string) => {
+    try {
+      const translation = `Translated: ${text} (in Hindi)`; 
+      setTranslatedText(translation);
+    } catch (error) {
+      console.error('Translation failed:', error);
+      setTranslatedText('Translation error occurred.');
+    }
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const text = e.target.value;
+    setEnglishText(text);
+    translateText(text); 
+    setIsVerified(false); 
+  };
+
+  const handleVerification = () => {
+    if (englishText && translatedText) {
+      setIsVerified(true);
+    } else {
+      alert('Please enter and translate the title first.');
+    }
+  };
+    const [results, setResults] = useState<{ testCase: string; result: string }[]>([]);
       
     const [testCases, setTestCases] = useState<TestCaseResult[]>([]);
     const [loading, setLoading] = useState(false);
@@ -88,9 +116,43 @@ const TitleVerification = () => {
     //   }
     };
   return (
+    <>
+      <h1 className="text-3xl font-bold text-center my-5" >TradeMark Sarthi</h1>
     <div className="max-w-lg mx-auto mt-10 p-5 border rounded-lg ">
     <h1 className="text-2xl font-bold mb-4">Title Verification</h1>
     <form onSubmit={handleSubmit} className="space-y-4">
+    <div className="flex flex-col md:flex-row gap-6">
+        {/* Left: English Text Input */}
+        <div className="flex-1">
+          <label htmlFor="englishText" className="block text-sm font-medium text-black mb-1">
+            English Text
+          </label>
+          <textarea
+            id="englishText"
+            rows={5}
+            value={englishText}
+            onChange={handleInputChange}
+            placeholder="Enter title in English"
+            className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+
+        {/* Right: Hindi Text Display */}
+        <div className="flex-1">
+          <label htmlFor="translatedText" className="block text-sm font-medium text-black mb-1">
+            Translated Hindi Text
+          </label>
+          <textarea
+            id="translatedText"
+            rows={5}
+            value={translatedText}
+            readOnly
+            placeholder="Translation will appear here"
+            className="w-full p-4 border border-gray-300 rounded-lg bg-gray-100"
+          />
+        </div>
+      </div>
+
       <input
         type="text"
         value={title}
@@ -117,7 +179,7 @@ const TitleVerification = () => {
         />
       ))}
 
-{/* <ResultCard testCase="dede" result="Passed" /> */}
+
 <div className="mt-6 space-y-4">
         {testCases.map((testCase) => (
           <div
@@ -127,9 +189,10 @@ const TitleVerification = () => {
             <span className="font-semibold">{testCase.name}</span>
             {testCase.status === "Loading" ? (
             //   <Loader />
-            <div>LOADING.....
+            <div> <Loader/>
                 </div>
             ) : (
+              // <L2oader/>
               <span
                 className={`font-bold ${
                   testCase.status === "Passed"
@@ -145,6 +208,7 @@ const TitleVerification = () => {
       </div>
     </div>
   </div>
+  </>
   )
 }
 
