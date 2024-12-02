@@ -8,11 +8,11 @@
 2. Activate the virtual environment:
    - On Windows:
      ```bash
-     .\env\Scripts\activate
+     cd server && .\env\Scripts\activate
      ```
 1. Install the required dependencies:
    ```bash
-   pip install -r requirements.txt
+   cd server && pip install -r requirements.txt
    ```
 
 ## Step 2: Navigate to the Server Folder
