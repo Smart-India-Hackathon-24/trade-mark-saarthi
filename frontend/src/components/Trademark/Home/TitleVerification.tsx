@@ -121,8 +121,9 @@ const TitleVerification = () => {
     <div className="max-w-lg mx-auto mt-10 p-5 border rounded-lg ">
     <h1 className="text-2xl font-bold mb-4">Title Verification</h1>
     <form onSubmit={handleSubmit} className="space-y-4">
-    <div className="flex flex-col md:flex-row gap-6">
-        {/* Left: English Text Input */}
+
+    {/* <div className="flex flex-col md:flex-row gap-6">
+
         <div className="flex-1">
           <label htmlFor="englishText" className="block text-sm font-medium text-black mb-1">
             English Text
@@ -137,7 +138,7 @@ const TitleVerification = () => {
           />
         </div>
 
-        {/* Right: Hindi Text Display */}
+
         <div className="flex-1">
           <label htmlFor="translatedText" className="block text-sm font-medium text-black mb-1">
             Translated Hindi Text
@@ -151,7 +152,7 @@ const TitleVerification = () => {
             className="w-full p-4 border border-gray-300 rounded-lg bg-gray-100"
           />
         </div>
-      </div>
+      </div> */}
 
       <input
         type="text"

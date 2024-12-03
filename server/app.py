@@ -10,6 +10,7 @@ from config import (
 )
 from database import connect_db
 from routes import health_routes, trademark_routes,simillarity_routes
+# ,semantic_routes
 
 # Initialize FastAPI app
 app = FastAPI(
@@ -69,6 +70,6 @@ connect_db()
 app.include_router(health_routes.router)
 app.include_router(trademark_routes.router)
 app.include_router(simillarity_routes.router)
-
+# app.include_router(semantic_routes.router)
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=PORT)
