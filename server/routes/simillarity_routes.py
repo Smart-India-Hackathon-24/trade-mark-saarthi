@@ -127,6 +127,7 @@ async def similar_sounding_names(name: str = Query(..., description="The name to
             return {
                 "message": f"The name '{name}' is very common in the database.",
                 "details": matches_found,
+                "result":result
             }
         elif total_count == 0:
             return {"message": f"The name '{name}' has no common words in the database."}
