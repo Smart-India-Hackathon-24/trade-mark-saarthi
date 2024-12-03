@@ -58,6 +58,34 @@ async def similar_sounding_names():
     
 def get_metaphone(name):
     return doublemetaphone(name)[0]
+
+
+def wagner_fischer(s1, s2):
+    len_s1, len_s2 = len(s1), len(s2)
+    if len_s1 > len_s2:
+        s1, s2 = s2, s1
+        len_s1, len_s2 = len_s2, len_s1
+
+    current_row = range(len_s1 + 1)
+    for i in range(1, len_s2 + 1):
+        previous_row, current_row = current_row, [i] + [0] * len_s1
+        for j in range(1, len_s1 + 1):
+            add, delete, change = previous_row[j] + 1, current_row[j-1] + 1, previous_row[j-1]
+            if s1[j-1] != s2[i-1]:
+                change += 1
+            current_row[j] = min(add, delete, change)
+
+    return current_row[len_s1]
+
+def spell_check(word, dictionary):
+    suggestions = []
+
+    for correct_word in dictionary:
+        distance = wagner_fischer(word, correct_word)
+        suggestions.append(distance)
+
+    # suggestions.sort(key=lambda x: x[1])
+    return suggestions
     
 async def perform_hybrid_search(collection,reqs,output_fields,name=0.8,meta=0.2):
     processed_results = []
@@ -77,7 +105,7 @@ async def perform_hybrid_search(collection,reqs,output_fields,name=0.8,meta=0.2)
         })
     return processed_results
 
-async def hybrid_vector_search_for_count(name):
+async def hybrid_vector_search_for_count(name,title,meta):
     try:
         collection=get_collection("All_Words_Count_List")
         nameVector=[model.encode(name).tolist()]
@@ -102,20 +130,32 @@ async def hybrid_vector_search_for_count(name):
         }
         reqs = [AnnSearchRequest(**search_param_1), AnnSearchRequest(**search_param_2)]
         output_fields=["Metaphone_Name","Title_Name",'Count']
-        final_result_df=await perform_hybrid_search(collection,reqs,output_fields,0.8,0.2,)
+        final_result_df=await perform_hybrid_search(collection,reqs,output_fields,title,meta,)
         df=pd.DataFrame(final_result_df)
-        df=df.sort_values(by=['distance',"Count"],ascending=False)[:50]
-        return df.loc[df['Count']>100]
+        df=df.sort_values(by=['distance',"Count"],ascending=False)[:60]
+        return df
+        # return df.loc[df['Count']>100]
     except Exception as e:
         return {"error": str(e.with_traceback())}, 500
 
 @router.get("/commonprefixsuffix")
-async def similar_sounding_names(name: str = Query(..., description="The name to search for")):
+async def similar_sounding_names(name: str = Query(..., description="The name to search for"),title: float = Query(..., description="The name to search for"),meta: float = Query(..., description="The name to search for")):
     try:
         total_count = 0
         matches_found = []
         for n in name.split():
-            result= await hybrid_vector_search_for_count(n)
+            print(n)
+            print(get_metaphone(n))
+            n=n.upper()
+            result= await hybrid_vector_search_for_count(n,title,meta)
+            title_name_dist = spell_check(name,result['Title_Name'])
+            meta_dist=spell_check(get_metaphone(name),result['Metaphone_Name'])
+            result['Title_Levensthein'] = title_name_dist
+            result['Meta_Levensthein'] = meta_dist
+            result = result.sort_values(
+                by=['Meta_Levensthein', 'Title_Levensthein'], 
+                ascending=[True, True])
+            print(result)
             result=result.loc[result['distance']>0.80]
             if result.shape[0] > 0:
                 word_count = sum(result['Count'])
