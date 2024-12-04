@@ -12,6 +12,7 @@ from pymilvus import WeightedRanker
 from fuzzywuzzy import fuzz
 from phonetics import metaphone
 
+import json
 from models.trademark_model import TrademarkData
 from database import get_collection
 
@@ -170,6 +171,7 @@ async def similar_sounding_names(name: str = Query(..., description="The name to
             return {
                 "message": f"The name '{name}' is very common in the database.",
                 "details": matches_found,
+                "result":json.loads(result.to_json())
             }
         elif total_count == 0:
             return {"message": f"The name '{name}' has no common words in the database."}
