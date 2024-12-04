@@ -9,6 +9,8 @@ from scipy.spatial.distance import cosine
 from metaphone import doublemetaphone
 from pymilvus import AnnSearchRequest
 from pymilvus import WeightedRanker
+from fuzzywuzzy import fuzz
+from phonetics import metaphone
 
 from models.trademark_model import TrademarkData
 from database import get_collection
@@ -57,7 +59,8 @@ async def similar_sounding_names():
         return {"error": str(e.with_traceback())}, 500
     
 def get_metaphone(name):
-    return doublemetaphone(name)[0]
+    # return doublemetaphone(name)[0]
+    return metaphone(name)
 
 
 def wagner_fischer(s1, s2):
@@ -150,11 +153,11 @@ async def similar_sounding_names(name: str = Query(..., description="The name to
             result= await hybrid_vector_search_for_count(n,title,meta)
             title_name_dist = spell_check(name,result['Title_Name'])
             meta_dist=spell_check(get_metaphone(name),result['Metaphone_Name'])
-            result['Title_Levensthein'] = title_name_dist
+            result['fuzzy_distance'] = result['Title_Name'].apply(lambda x: fuzz.ratio(name, x))
             result['Meta_Levensthein'] = meta_dist
-            result = result.sort_values(
-                by=['Meta_Levensthein', 'Title_Levensthein'], 
-                ascending=[True, True])
+            # result = result.sort_values(
+            #     by=['Meta_Levensthein', 'Title_Levensthein'], 
+            #     ascending=[True, True])
             print(result)
             result=result.loc[result['distance']>0.80]
             if result.shape[0] > 0:
