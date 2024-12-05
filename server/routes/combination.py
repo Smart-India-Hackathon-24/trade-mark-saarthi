@@ -129,3 +129,42 @@ async def get_all_data(name: str = Query(..., description="The name to search fo
 
     except Exception as e:
         return {"error": str(e.with_traceback())}, 500
+    
+
+
+
+
+
+
+@router.get("/space_nospace")
+async def get_all_data(name: str = Query(..., description="The name to search for")):
+    try:
+        def remove_spaces_variants(s):
+            # Generate all possible versions of the string with spaces removed at different positions
+            variants = set()
+            for i in range(len(s) + 1):
+                # Create a variant with spaces removed up to index `i`
+                variant = s[:i] + s[i:].replace(" ", "")
+                variants.add(variant)
+            return variants
+
+        def is_not_in_list(input_string, string_list):
+            # Get all variants of the input string (spaces removed at any position)
+            input_variants = remove_spaces_variants(input_string.replace(" ", "")) # First remove all spaces from input string
+            
+            # For each string in the list, generate the variants and check if there's a match
+            for string in string_list:
+                list_variants = remove_spaces_variants(string.replace(" ", ""))
+                if any(variant in list_variants for variant in input_variants):
+                    return False
+            return True
+
+        allowed = is_not_in_list(name,string_list=COLUMN_VALUE)
+
+        if allowed:
+            return {"Message":f"{name} is  allowed !"}
+        else:
+            return {"Message":f"{name} is not allowed !"}
+
+    except Exception as e:
+        return {"error": str(e.with_traceback())}, 500
