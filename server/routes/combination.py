@@ -104,3 +104,28 @@ async def get_all_data(name: str = Query(..., description="The name to search fo
             return {"Message":f"{name} is not a combination of titles !"}
     except Exception as e:
         return {"error": str(e.with_traceback())}, 500
+    
+
+@router.get("/disallowedPrefix")
+async def get_all_data(name: str = Query(..., description="The name to search for")):
+    try:
+
+        def check_string(input_str):
+            restricted_words = ["POLICE", "CRIME", "CORRUPTION", "CBI", "CID", "ARMY"]
+            words = input_str.split()
+            
+            for word in words:
+                if word in restricted_words:
+                    return False
+            
+            return True
+
+        allowed = check_string(name)
+
+        if allowed:
+            return {"Message":f"{name} is  allowed !"}
+        else:
+            return {"Message":f"{name} is not allowed !"}
+
+    except Exception as e:
+        return {"error": str(e.with_traceback())}, 500

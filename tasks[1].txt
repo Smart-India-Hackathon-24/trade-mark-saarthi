@@ -21,19 +21,19 @@ Requirements:
         
         d. Calculate a similarity percentage for each title comparison. 
         
-    2. Prefix/Suffix Handling: /disallowedPrefix _>Parent API KHUSHIL ---------------- 1st step
+    2. Prefix/Suffix Handling: /disallowedPrefix _>Parent API VIREN ---------------- 1st step
         
         a. Maintain a list of disallowed prefixes and suffixes.  /
         
         b. Reject any new titles that include these disallowed prefixes or suffixes if they cause the new title to resemble an existing title closely. 
     
-    3. Guideline Enforcement: 
+    3. Guideline Enforcement: /combination
     
-        a. Maintain a list of disallowed words (e.g., Police, Crime, Corruption, CBI, CID, Army). /disallowedPrefix/       KHUSHIL ----------1st step
+        a. Maintain a list of disallowed words (e.g., Police, Crime, Corruption, CBI, CID, Army). /disallowedPrefix      VIREN ----------1st step
         
         b. Ensure that titles containing these disallowed words are rejected. 
         
-        c. Prevent the creation of new titles by combining existing ones (e.g., if "Hindu" and "Indian Express" exist, "Hindu Indian Express is not allowed"). /combineTitles VIREN
+        c. Prevent the creation of new titles by combining existing ones (e.g., if "Hindu" and "Indian Express" exist, "Hindu Indian Express is not allowed"). /  VIREN
         
         d. Check for titles with similar meanings in other languages and reject them (e.g., "Daily Evening" and "Pratidin Sandhya").  /similarmeanings    KARAN
 	
