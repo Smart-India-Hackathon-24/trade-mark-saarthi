@@ -2,6 +2,7 @@
 import Loader from "@/components/Common/Loader";
 import ResultCard from "@/components/Common/ResultCard";
 import axios from "axios";
+import { Console } from "console";
 import React, { useState } from 'react'
 
 type TestCaseResult = {
@@ -20,12 +21,13 @@ const TitleVerification = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
 
+    // "https://api.example.com/testcase2", 
+    // "https://api.example.com/testcase3",
+    // "https://api.example.com/testcase4",
     const apiEndpoints = [
         `${process.env.NEXT_PUBLIC_API_URL}/trademark/getdataontitle`,
         `${process.env.NEXT_PUBLIC_API_URL}/trademark/getdataontitle`,
-        "https://api.example.com/testcase2", 
         "https://api.example.com/testcase3",
-        "https://api.example.com/testcase4",
         `${process.env.NEXT_PUBLIC_API_URL}/trademark/getdataontitle`,
         
     ];
@@ -58,7 +60,7 @@ const TitleVerification = () => {
 
     const fetchData = async (url: string, title: string, options?: { signal?: AbortSignal }) => {
         try {
-            const response = await axios.get(`${url}?name=${title}`, options);
+            const response = await axios.get(`${url}?name=${title}`);
             return response?.data;
         } catch (error) {
             if (axios.isCancel(error)) {
@@ -81,7 +83,7 @@ const TitleVerification = () => {
                         const apiResult = await fetchData(endpoint, title, {
                             signal: abortController.signal
                         });
-
+                        console.log("DDD",apiResult)
                         const status = apiResult?.result === true ? "Passed" : "Failed";
                         updatedTestCases[index].status = status;
                         
