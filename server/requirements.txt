@@ -55,3 +55,6 @@ tzdata==2024.2
 ujson==5.10.0
 urllib3==2.2.3
 uvicorn==0.32.0
+fuzzywuzzy=0.18.0
+phonetics=1.0.5
+Levenshtein=0.26.1
