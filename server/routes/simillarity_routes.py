@@ -24,7 +24,7 @@ async def get_all_data():
     # Identify the titles that have common prefix and suffix eg. THE,INDIA,SAMACHAR,NEWS
     try:
         results = []
-        collection=get_collection("Simple_Embeddings")
+        collection=get_collection("Phonetic_Data")
         iterator = collection.query_iterator(
         expr="",
         output_fields=["Title_Name"]
@@ -111,7 +111,7 @@ async def perform_hybrid_search(collection,reqs,output_fields,name=0.8,meta=0.2)
 
 async def hybrid_vector_search_for_count(name,title,meta):
     try:
-        collection=get_collection("All_Words_Count_List")
+        collection=get_collection("Phonetic_Data")
         nameVector=[model.encode(name).tolist()]
         metaphoneVector=[model.encode(get_metaphone(name)).tolist()]
         search_param_1 = {
@@ -133,10 +133,10 @@ async def hybrid_vector_search_for_count(name,title,meta):
         "limit": 200,
         }
         reqs = [AnnSearchRequest(**search_param_1), AnnSearchRequest(**search_param_2)]
-        output_fields=["Metaphone_Name","Title_Name",'Count']
+        output_fields=["Metaphone_Name","Title_Name"]
         final_result_df=await perform_hybrid_search(collection,reqs,output_fields,title,meta,)
         df=pd.DataFrame(final_result_df)
-        df=df.sort_values(by=['distance',"Count"],ascending=False)[:60]
+        df=df.sort_values(by=['distance'],ascending=False)[:60]
         return df
         # return df.loc[df['Count']>100]
     except Exception as e:
@@ -151,34 +151,35 @@ async def similar_sounding_names(name: str = Query(..., description="The name to
             print(n)
             print(get_metaphone(n))
             n=n.upper()
-            result= await hybrid_vector_search_for_count(n,title,meta)
+            result= await hybrid_vector_search_for_count(name.upper(),title,meta)
             title_name_dist = spell_check(name,result['Title_Name'])
             meta_dist=spell_check(get_metaphone(name),result['Metaphone_Name'])
-            result['fuzzy_distance'] = result['Title_Name'].apply(lambda x: fuzz.ratio(name, x))
+            result['fuzzy'] = result['Title_Name'].apply(lambda x: fuzz.ratio(name.upper(), x))
             result['Meta_Levensthein'] = meta_dist
-            # result = result.sort_values(
-            #     by=['Meta_Levensthein', 'Title_Levensthein'], 
-            #     ascending=[True, True])
+            result = result.sort_values(
+                by=['fuzzy','distance'], 
+                ascending=[False,False])
             print(result)
             result=result.loc[result['distance']>0.80]
-            if result.shape[0] > 0:
-                word_count = sum(result['Count'])
-                total_count += word_count
-                matches_found.append(f"The word '{n}' or similar matches with {(word_count * 100) / 10000:.2f}% of total names.")
-            else:
-                matches_found.append(f"No match found for the word '{n}'.")
-        if total_count > 0:  # Example threshold for a "very common" name
-            return {
-                "message": f"The name '{name}' is very common in the database.",
-                "details": matches_found,
-                "result":json.loads(result.to_json())
-            }
-        elif total_count == 0:
-            return {"message": f"The name '{name}' has no common words in the database."}
-        else:
-            return {
-                "message": f"Results for the name '{name}':",
-                "details": matches_found,
-            }
+            # return result
+        #     if result.shape[0] > 0:
+        #         word_count = sum(result['Count'])
+        #         total_count += word_count
+        #         matches_found.append(f"The word '{n}' or similar matches with {(word_count * 100) / 10000:.2f}% of total names.")
+        #     else:
+        #         matches_found.append(f"No match found for the word '{n}'.")
+        # if total_count > 0:  # Example threshold for a "very common" name
+        #     return {
+        #         "message": f"The name '{name}' is very common in the database.",
+        #         "details": matches_found,
+        #         "result":json.loads(result.to_json())
+        #     }
+        # elif total_count == 0:
+        #     return {"message": f"The name '{name}' has no common words in the database."}
+        # else:
+        #     return {
+        #         "message": f"Results for the name '{name}':",
+        #         "details": matches_found,
+        #     }
     except Exception as e:
         return {"error": str(e.with_traceback())}, 500
