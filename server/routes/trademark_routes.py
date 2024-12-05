@@ -89,7 +89,12 @@ async def get_data_title(name: str = Query(..., description="The name to search 
 
         df = pd.DataFrame(all_data)
         print(df)
-        return df
+        results=(df['distance']>=0.8).any()
+        print("------",results,(df['distance']>=0.8).any())
+        if (df['distance']>=0.85).any():
+            return {"message":"The Same Title is already present in database","result":False}
+
+        return {"message":"Title similarity score is less than 80% server can accept your title","result":True}
         # file_path = "results.csv"
         # df.to_csv(file_path, index=False)
         # return FileResponse(
