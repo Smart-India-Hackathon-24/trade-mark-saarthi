@@ -108,12 +108,12 @@ async def get_all_data(name: str = Query(..., description="The name to search fo
     
 
 @router.get("/disallowedPrefix")
-async def get_all_data(name: str = Query(..., description="The name to search for")):
+async def get_all_data (name: str = Query(..., description="The name to search for")):
     try:
 
         def check_string(input_str):
             restricted_words = ["POLICE", "CRIME", "CORRUPTION", "CBI", "CID", "ARMY"]
-            words = input_str.split()
+            words = input_str.upper().split()
             
             for word in words:
                 if word in restricted_words:
@@ -130,11 +130,6 @@ async def get_all_data(name: str = Query(..., description="The name to search fo
 
     except Exception as e:
         return {"error": str(e.with_traceback())}, 500
-    
-
-
-
-
 
 
 @router.get("/space_nospace")
