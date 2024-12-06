@@ -1,4 +1,12 @@
 from fastapi import APIRouter, Query
+from fastapi.responses import JSONResponse
+
+
+
+# from utils import (
+#     hybrid_vector_search_for_count,
+#     process_common_prefix_suffix
+# )
 from fastapi.responses import JSONResponse, FileResponse
 from typing import List
 from bs4 import BeautifulSoup
@@ -15,6 +23,11 @@ from phonetics import metaphone
 import json
 from models.trademark_model import TrademarkData
 from database import get_collection
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+import nltk
+# nltk.download('stopwords')
+# nltk.download('punkt_tab')
 
 router = APIRouter(prefix="/similarity", tags=["trademark"])
 model = SentenceTransformer("all-MiniLM-L6-v2")
@@ -49,12 +62,15 @@ async def get_all_data():
         titleWithNonCommon.to_csv("../dataFiles/titlesWithNonCommon.csv",index=False)
         return {"Message":"File created succesfully"}
     except Exception as e:
-        return {"error": str(e.with_traceback())}, 500
-    
-    
+        return JSONResponse(
+            status_code=500,
+            content={"error": str(e)}
+        )
+
 @router.get("/similarsoundingnames")
 async def similar_sounding_names():
     try:
+        # Implement this endpoint if needed
         pass
     except Exception as e:
         return {"error": str(e.with_traceback())}, 500
@@ -103,15 +119,15 @@ async def perform_hybrid_search(collection,reqs,output_fields,name=0.8,meta=0.2)
     for result in results[0]:
         processed_results.append({
             "distance": result.distance,
-            "Metaphone_Name": result.entity.get("Metaphone_Name"),
+            "Metaphone_Name_After_Sort": result.entity.get("Metaphone_Name_After_Sort"),
             "Title_Name": result.entity.get("Title_Name"),
-            "Count":result.entity.get("Count")
+            "Title_Name_After_Sort":result.entity.get("Title_Name_After_Sort")
         })
     return processed_results
 
 async def hybrid_vector_search_for_count(name,title,meta):
     try:
-        collection=get_collection("Phonetic_Data")
+        collection=get_collection("Alphabetic_sort")
         nameVector=[model.encode(name).tolist()]
         metaphoneVector=[model.encode(get_metaphone(name)).tolist()]
         search_param_1 = {
@@ -133,10 +149,11 @@ async def hybrid_vector_search_for_count(name,title,meta):
         "limit": 200,
         }
         reqs = [AnnSearchRequest(**search_param_1), AnnSearchRequest(**search_param_2)]
-        output_fields=["Metaphone_Name","Title_Name"]
+        output_fields=["Metaphone_Name_After_Sort","Title_Name",'Title_Name_After_Sort']
         final_result_df=await perform_hybrid_search(collection,reqs,output_fields,title,meta,)
-        df=pd.DataFrame(final_result_df)
-        df=df.sort_values(by=['distance'],ascending=False)[:60]
+        df=pd.DataFrame(final_result_df)[:60]
+        # df=df.sort_values(by=['distance'],ascending=False)[:60]
+        # print(df)
         return df
         # return df.loc[df['Count']>100]
     except Exception as e:
@@ -147,20 +164,31 @@ async def similar_sounding_names(name: str = Query(..., description="The name to
     try:
         total_count = 0
         matches_found = []
+        words = word_tokenize(name)
+        title_sorted=word_tokenize(name)
+        filtered_words = [word for word in words if word.lower() not in stopwords.words('english')]
+        sorted_sentence = sorted(filtered_words, key=str.lower)
+        title_after_sort = ' '.join(sorted_sentence)
+        
         for n in name.split():
             print(n)
             print(get_metaphone(n))
             n=n.upper()
-            result= await hybrid_vector_search_for_count(name.upper(),title,meta)
-            title_name_dist = spell_check(name,result['Title_Name'])
-            meta_dist=spell_check(get_metaphone(name),result['Metaphone_Name'])
-            result['fuzzy'] = result['Title_Name'].apply(lambda x: fuzz.ratio(name.upper(), x))
+            result= await hybrid_vector_search_for_count(title_after_sort.upper(),title,meta)
+            # title_name_dist = spell_check(name,result['Title_Name'])
+            meta_dist=spell_check(get_metaphone(title_after_sort),result['Metaphone_Name_After_Sort'])
+            result['fuzzy'] = result['Title_Name'].apply(lambda x: fuzz.ratio(title_after_sort.upper(), x))
             result['Meta_Levensthein'] = meta_dist
             result = result.sort_values(
-                by=['fuzzy','distance'], 
-                ascending=[False,False])
+                by=['distance','fuzzy','Meta_Levensthein'], 
+                ascending=[False,False,True])
             print(result)
-            result=result.loc[result['distance']>0.80]
+            # result=result.loc[result['distance']>0.80]
+            return {
+                "message": f"The name '{name}' is very common in the database.",
+                "details": matches_found,
+                "result":json.loads(result.to_json())
+            }
             # return result
         #     if result.shape[0] > 0:
         #         word_count = sum(result['Count'])
@@ -182,4 +210,7 @@ async def similar_sounding_names(name: str = Query(..., description="The name to
         #         "details": matches_found,
         #     }
     except Exception as e:
-        return {"error": str(e.with_traceback())}, 500
+        return JSONResponse(
+            status_code=500,
+            content={"error": str(e)}
+        )
