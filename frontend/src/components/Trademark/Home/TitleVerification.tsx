@@ -1,8 +1,6 @@
 "use client";
 import Loader from "@/components/Common/Loader";
-import ResultCard from "@/components/Common/ResultCard";
 import axios from "axios";
-import { Console } from "console";
 import React, { useState } from 'react'
 
 type TestCaseResult = {
@@ -21,15 +19,10 @@ const TitleVerification = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
 
-    // "https://api.example.com/testcase2", 
-    // "https://api.example.com/testcase3",
-    // "https://api.example.com/testcase4",
     const apiEndpoints = [
         `${process.env.NEXT_PUBLIC_API_URL}/trademark/getdataontitle`,
         `${process.env.NEXT_PUBLIC_API_URL}/trademark/getdataontitle`,
-        "https://api.example.com/testcase3",
-        `${process.env.NEXT_PUBLIC_API_URL}/trademark/getdataontitle`,
-        
+
     ];
 
     // Simulate translation (Replace with actual API)
