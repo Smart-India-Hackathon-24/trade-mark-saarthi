@@ -1,15 +1,16 @@
 from fastapi import APIRouter, Query
 import pandas as pd
 import csv
-
+import os
 import json
 from models.trademark_model import TrademarkData
 from database import get_collection
 
 router = APIRouter(prefix="/combination", tags=["trademark"])
 
-def read_column_from_csv(file_path='D:/Projects/Hackathons/SIH\'24/trade-mark-saarthi/dataFiles/final.csv', column_name='Title Name'):
+def read_column_from_csv(column_name='Title Name'):
             column_values = []
+            file_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), 'dataFiles', 'final.csv')
             
             with open(file_path, 'r', encoding='utf-8') as csvfile:
                 # CSV reader
