@@ -9,10 +9,9 @@ from config import (
     PORT
 )
 from database import connect_db
-from routes import health_routes, trademark_routes,simillarity_routes, combination, fix_check
-# ,semantic_routes
+from routes import health_routes, trademark_routes, simillarity_routes, combination, fix_check
 
-# Initialize FastAPI app
+# Initialize FastAPI app only once
 app = FastAPI(
     title=API_TITLE,
     description=API_DESCRIPTION,
@@ -20,39 +19,19 @@ app = FastAPI(
     docs_url="/docs",
     redoc_url="/redoc",
 )
-from fastapi.responses import JSONResponse
-from pymilvus import Collection, connections, FieldSchema, CollectionSchema, DataType
+
+# Load environment variables
 from dotenv import load_dotenv
 import os
-from bs4 import BeautifulSoup
-import random
-import json
-from typing import List,Dict,Any
-from pydantic import BaseModel
-from sentence_transformers import SentenceTransformer
-from scipy.spatial.distance import cosine
-from metaphone import doublemetaphone
-import pandas as pd
-from fastapi.responses import FileResponse
-
-
 load_dotenv()
 
 # Connect to Zilliz Cloud
+from pymilvus import connections
 connections.connect(
     alias="default",
     uri=os.getenv("ZILLIZ_URI"),
     token=os.getenv("ZILLIZ_TOKEN")    
 )
-
-# Configure allowed origins
-origins = [
-    "http://localhost:3000",    # React default port
-    "http://localhost:8080",    # Common frontend port
-    # Add other allowed origins as needed
-]
-
-app = FastAPI()
 
 # Configure CORS
 app.add_middleware(
@@ -74,4 +53,10 @@ app.include_router(combination.router)
 app.include_router(fix_check.router)
 # app.include_router(semantic_routes.router)
 if __name__ == "__main__":
+    # For local development
     uvicorn.run(app, host="0.0.0.0", port=PORT)
+else:
+    # For production
+    # This is important for Railway deployment
+    port = int(os.getenv("PORT", PORT))
+    host = os.getenv("HOST", "0.0.0.0")

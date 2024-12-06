@@ -16,9 +16,8 @@ ZILLIZ_TOKEN = os.getenv("ZILLIZ_TOKEN")
 ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:8080",
-    "https://trademark-sarthi.vercel.app",
     "https://trade-mark-saarthi.onrender.com",
-    "*"
+    "https://trade-mark-saarthi-production.up.railway.app",
 ]
 
 # Server Configuration
