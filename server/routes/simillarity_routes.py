@@ -119,15 +119,25 @@ async def perform_hybrid_search(collection,reqs,output_fields,name=0.8,meta=0.2)
     for result in results[0]:
         processed_results.append({
             "distance": result.distance,
+<<<<<<< HEAD
             "Metaphone_Name_After_Sort": result.entity.get("Metaphone_Name_After_Sort"),
             "Title_Name": result.entity.get("Title_Name"),
             "Title_Name_After_Sort":result.entity.get("Title_Name_After_Sort")
+=======
+            "Metaphone_Name": result.entity.get("Metaphone_Name"),
+            "Title_Name": result.entity.get("Title_Name"),
+            "Count":result.entity.get("Count")
+>>>>>>> 5b6ab35 (No Changes)
         })
     return processed_results
 
 async def hybrid_vector_search_for_count(name,title,meta):
     try:
+<<<<<<< HEAD
         collection=get_collection("Alphabetic_sort")
+=======
+        collection=get_collection("Phonetic_Data")
+>>>>>>> 5b6ab35 (No Changes)
         nameVector=[model.encode(name).tolist()]
         metaphoneVector=[model.encode(get_metaphone(name)).tolist()]
         search_param_1 = {
@@ -149,11 +159,18 @@ async def hybrid_vector_search_for_count(name,title,meta):
         "limit": 200,
         }
         reqs = [AnnSearchRequest(**search_param_1), AnnSearchRequest(**search_param_2)]
+<<<<<<< HEAD
         output_fields=["Metaphone_Name_After_Sort","Title_Name",'Title_Name_After_Sort']
         final_result_df=await perform_hybrid_search(collection,reqs,output_fields,title,meta,)
         df=pd.DataFrame(final_result_df)[:60]
         # df=df.sort_values(by=['distance'],ascending=False)[:60]
         # print(df)
+=======
+        output_fields=["Metaphone_Name","Title_Name"]
+        final_result_df=await perform_hybrid_search(collection,reqs,output_fields,title,meta,)
+        df=pd.DataFrame(final_result_df)
+        df=df.sort_values(by=['distance'],ascending=False)[:60]
+>>>>>>> 5b6ab35 (No Changes)
         return df
         # return df.loc[df['Count']>100]
     except Exception as e:
@@ -174,6 +191,7 @@ async def similar_sounding_names(name: str = Query(..., description="The name to
             print(n)
             print(get_metaphone(n))
             n=n.upper()
+<<<<<<< HEAD
             result= await hybrid_vector_search_for_count(title_after_sort.upper(),title,meta)
             # title_name_dist = spell_check(name,result['Title_Name'])
             meta_dist=spell_check(get_metaphone(title_after_sort),result['Metaphone_Name_After_Sort'])
@@ -189,6 +207,18 @@ async def similar_sounding_names(name: str = Query(..., description="The name to
                 "details": matches_found,
                 "result":json.loads(result.to_json())
             }
+=======
+            result= await hybrid_vector_search_for_count(name.upper(),title,meta)
+            title_name_dist = spell_check(name,result['Title_Name'])
+            meta_dist=spell_check(get_metaphone(name),result['Metaphone_Name'])
+            result['fuzzy'] = result['Title_Name'].apply(lambda x: fuzz.ratio(name.upper(), x))
+            result['Meta_Levensthein'] = meta_dist
+            result = result.sort_values(
+                by=['fuzzy','distance'], 
+                ascending=[False,False])
+            print(result)
+            result=result.loc[result['distance']>0.80]
+>>>>>>> 5b6ab35 (No Changes)
             # return result
         #     if result.shape[0] > 0:
         #         word_count = sum(result['Count'])
