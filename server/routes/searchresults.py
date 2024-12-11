@@ -97,10 +97,19 @@ async def hybrid_vector_search_for_count(name,title,meta):
         },
         "limit": 200,
         }
+        # search_param_3 = {
+        # "data": metaphoneVector, 
+        # "anns_field": "vector_of_metaphone", 
+        # "param": {
+        #     "metric_type": "COSINE",
+        #     "params": {"nprobe": 384}
+        # },
+        # "limit": 200,
+        # }
         reqs = [AnnSearchRequest(**search_param_1), AnnSearchRequest(**search_param_2)]
         output_fields=["Metaphone_Name_After_Sort","Title_Name",'Title_Name_After_Sort']
         final_result_df=await perform_hybrid_search(collection,reqs,output_fields,title,meta,)
-        df=pd.DataFrame(final_result_df)[:20]
+        df=pd.DataFrame(final_result_df)[:200]
         # df=df.sort_values(by=['distance'],ascending=False)[:60]
         # print(df)
         return df
@@ -148,3 +157,73 @@ async def same_title(name: str = Query(..., description="The name to search for"
         # print("***************************************************************")
     except Exception as e:
         return {"error": str(e.with_traceback())}, 500
+    
+@router.get("/similartitles")
+async def similar_title(name: str = Query(..., description="The name to search for"),meta: float = Query(..., description="The name to search for")):
+    try:
+        words = word_tokenize(name)
+        filtered_words = [word for word in words if word.lower() not in stopwords.words('english')]
+        sorted_sentence = sorted(filtered_words, key=str.lower)
+        title_after_sort = ' '.join(sorted_sentence).upper()
+        
+        print(title_after_sort)
+        print(get_metaphone(title_after_sort.upper()))
+        result= await hybrid_vector_search_for_count(title_after_sort,1.0,0.0)
+        meta_dist=spell_check(get_metaphone(title_after_sort.upper()),result['Metaphone_Name_After_Sort'])
+        result['fuzzy'] = result['Title_Name_After_Sort'].apply(lambda x: fuzz.ratio(title_after_sort.upper(), x))
+        result['Meta_Levensthein'] = meta_dist
+        lmax = result["Meta_Levensthein"].max()
+        result['Meta_Levensthein'] = lmax - result['Meta_Levensthein']
+        result = result.loc[
+            (result['distance'] >= (0.6)) &
+            (result['fuzzy'] >= 40)
+        ]
+        resultDFL = result.sort_values(
+            by=['distance','fuzzy','Meta_Levensthein'], 
+            ascending=[False,False,False])
+        resultFDL = result.sort_values(
+            by=['fuzzy','distance','Meta_Levensthein'], 
+            ascending=[False,False,False])
+        print(resultDFL)
+        return {
+                "message": f"Titles as same as {name}",
+                "DFL":json.loads(resultDFL.to_json()),
+                "FDL":json.loads(resultFDL.to_json()),
+            }
+    except Exception as e:
+        return {"error": str(e.with_traceback())}, 500    
+    
+@router.get("/similarsound")
+async def similar_sound(name: str = Query(..., description="The name to search for"),meta: float = Query(..., description="The name to search for")):
+    try:
+        words = word_tokenize(name)
+        filtered_words = [word for word in words if word.lower() not in stopwords.words('english')]
+        sorted_sentence = sorted(filtered_words, key=str.lower)
+        title_after_sort = ' '.join(sorted_sentence).upper()
+        
+        print(title_after_sort)
+        print(get_metaphone(title_after_sort.upper()))
+        result= await hybrid_vector_search_for_count(title_after_sort,0.3,1.0)
+        meta_dist=spell_check(get_metaphone(title_after_sort.upper()),result['Metaphone_Name_After_Sort'])
+        result['fuzzy'] = result['Title_Name_After_Sort'].apply(lambda x: fuzz.ratio(title_after_sort.upper(), x))
+        result['Meta_Levensthein'] = meta_dist
+        lmax = result["Meta_Levensthein"].max()
+        result['Meta_Levensthein'] = lmax - result['Meta_Levensthein']
+        result = result.loc[
+            (result['distance'] >= (0.65)) &
+            (result['fuzzy'] >= 50)
+        ]
+        resultDFL = result.sort_values(
+            by=['distance','fuzzy','Meta_Levensthein'], 
+            ascending=[False,False,False])
+        resultFLD = result.sort_values(
+            by=['fuzzy','distance','Meta_Levensthein'], 
+            ascending=[False,False,False])
+        print(resultDFL)
+        return {
+                "message": f"Titles as same as {name}",
+                "FDL":json.loads(resultDFL.to_json()),
+                "FLD":json.loads(resultFLD.to_json())
+            }
+    except Exception as e:
+            return {"error": str(e.with_traceback())}, 500
