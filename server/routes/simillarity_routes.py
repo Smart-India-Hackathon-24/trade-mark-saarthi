@@ -19,8 +19,8 @@ from database import get_collection
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 import nltk
-nltk.download('stopwords')
-nltk.download('punkt_tab')
+# nltk.download('stopwords')
+# nltk.download('punkt_tab')
 
 router = APIRouter(prefix="/similarity", tags=["trademark"])
 model = SentenceTransformer("all-MiniLM-L6-v2")
@@ -165,17 +165,19 @@ async def similar_sounding_names(name: str = Query(..., description="The name to
         
         for n in name.split():
             print(n)
-            print(get_metaphone(n))
+            print(get_metaphone(title_after_sort.upper()))
             n=n.upper()
             result= await hybrid_vector_search_for_count(title_after_sort.upper(),title,meta)
             # title_name_dist = spell_check(name,result['Title_Name'])
-            meta_dist=spell_check(get_metaphone(title_after_sort),result['Metaphone_Name_After_Sort'])
-            result['fuzzy'] = result['Title_Name'].apply(lambda x: fuzz.ratio(title_after_sort.upper(), x))
+            meta_dist=spell_check(get_metaphone(title_after_sort.upper()),result['Metaphone_Name_After_Sort'])
+            result['fuzzy'] = result['Title_Name_After_Sort'].apply(lambda x: fuzz.ratio(title_after_sort.upper(), x))
             result['Meta_Levensthein'] = meta_dist
             result = result.sort_values(
-                by=['distance','fuzzy','Meta_Levensthein'], 
+                by=['fuzzy','distance','Meta_Levensthein'], 
                 ascending=[False,False,True])
             print(result)
+            file_path = "timeTest.csv"
+            result.to_csv(file_path, index=False)
             # result=result.loc[result['distance']>0.80]
             return {
                 "message": f"The name '{name}' is very common in the database.",

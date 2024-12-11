@@ -10,3 +10,4 @@ scipy
 sentence-transformers
 torch
 uvicorn
+nltk==3.9.1
