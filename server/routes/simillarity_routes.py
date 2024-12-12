@@ -12,9 +12,6 @@ from pymilvus import AnnSearchRequest
 from pymilvus import WeightedRanker
 from fuzzywuzzy import fuzz
 from phonetics import metaphone
-
-import json
-from models.trademark_model import TrademarkData
 from database import get_collection
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize

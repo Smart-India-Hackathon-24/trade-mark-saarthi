@@ -14,7 +14,6 @@ from fuzzywuzzy import fuzz
 from phonetics import metaphone
 
 import json
-from models.trademark_model import TrademarkData
 from database import get_collection
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
@@ -136,7 +135,7 @@ async def same_title(name: str = Query(..., description="The name to search for"
         result['fuzzy'] = result['Title_Name_After_Sort'].apply(lambda x: fuzz.ratio(title_after_sort.upper(), x))
         result['Meta_Levensthein'] = meta_dist
         lmax = result["Meta_Levensthein"].max()
-        result['Meta_Levensthein'] = lmax - result['Meta_Levensthein']
+        # result['Meta_Levensthein'] = lmax - result['Meta_Levensthein']
         result = result.loc[
             (result['distance'] >= ((1.0 + float(0.3)) - 0.150)) &
             (result['fuzzy'] > 90)

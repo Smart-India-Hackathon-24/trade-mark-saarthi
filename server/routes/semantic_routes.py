@@ -9,8 +9,6 @@ from scipy.spatial.distance import cosine
 from metaphone import doublemetaphone
 from pymilvus import AnnSearchRequest
 from pymilvus import WeightedRanker
-
-from models.trademark_model import TrademarkData
 from database import get_collection
 
 router = APIRouter(prefix="/semantic", tags=["trademark"])

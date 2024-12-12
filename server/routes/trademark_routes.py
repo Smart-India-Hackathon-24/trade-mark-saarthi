@@ -7,8 +7,6 @@ import pandas as pd
 from sentence_transformers import SentenceTransformer
 from scipy.spatial.distance import cosine
 from metaphone import doublemetaphone
-
-from models.trademark_model import TrademarkData
 from database import get_collection
 
 router = APIRouter(prefix="/trademark", tags=["trademark"])
@@ -106,7 +104,7 @@ async def get_data_title(name: str = Query(..., description="The name to search 
 
 
 @router.post("/add")
-async def insert_data(data: List[TrademarkData]):
+async def insert_data(data=None):
     try:
         if not data:
             return {"error": "No data provided"}, 400
