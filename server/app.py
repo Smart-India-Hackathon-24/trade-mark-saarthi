@@ -9,7 +9,7 @@ from config import (
     PORT
 )
 from database import connect_db
-from routes import health_routes, trademark_routes,simillarity_routes,searchresults
+from routes import health_routes, trademark_routes,simillarity_routes,translation_routes
 # ,semantic_routes
 
 # Initialize FastAPI app
@@ -47,8 +47,7 @@ connections.connect(
 
 # Configure allowed origins
 origins = [
-    "http://localhost:3000",    # React default port
-    "http://localhost:8080",    # Common frontend port
+    "*"
     # Add other allowed origins as needed
 ]
 
@@ -68,9 +67,10 @@ connect_db()
 
 # Include routers
 app.include_router(health_routes.router)
-app.include_router(trademark_routes.router)
-app.include_router(simillarity_routes.router)
-app.include_router(searchresults.router)
+# app.include_router(trademark_routes.router)
+# app.include_router(simillarity_routes.router)
+# app.include_router(searchresults.router)
+app.include_router(translation_routes.router )
 # app.include_router(semantic_routes.router)
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=PORT)

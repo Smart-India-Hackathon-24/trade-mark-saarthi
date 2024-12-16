@@ -29,7 +29,7 @@ async def get_all_data(
     show_nysiis: bool = Query(False, description="Show NYSIIS Name")
 ):
     try:
-        collection = get_collection("Phonetic_Data")
+        collection = get_collection("Alphabetic_sort")
         
         # Title_Name and Title_Code are always included
         output_fields = ["Title_Name", "Title_Code"]
@@ -126,7 +126,7 @@ async def insert_data(data: List[TrademarkData]):
 @router.get("/deleteAllData")
 def delete_all_data():
     try:
-        collection = get_collection('Phonetic_Data')
+        collection = get_collection('Alphabetic_sort')
         collection.delete(expr="Auto_id >= 0")
         return {"message": "All data deleted successfully"}
     except Exception as e:

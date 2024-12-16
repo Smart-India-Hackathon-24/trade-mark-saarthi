@@ -14,10 +14,6 @@ ZILLIZ_TOKEN = os.getenv("ZILLIZ_TOKEN")
 
 # CORS Configuration
 ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "http://localhost:8080",
-    "https://trademark-sarthi.vercel.app",
-    "https://trade-mark-saarthi.onrender.com",
     "*"
 ]
 
